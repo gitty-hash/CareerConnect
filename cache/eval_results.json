@@ -1,0 +1,1539 @@
+{
+  "created": "2026-10-15 16:20:22",
+  "method": "Lab-style RAGAS metrics (Chapter 4 lab Part 8): exact context recall vs. gold doc_ids + gpt-4o-mini judge for faithfulness and answer relevance. This is the brief's sanctioned fallback to the ragas library.",
+  "pipelines": {
+    "baseline": "Baseline - vector top-3",
+    "rerank": "Re-rank - vector top-10 -> cross-encoder top-3",
+    "hyde": "HyDE - search with a hypothetical answer",
+    "fusion": "RAG fusion - 3 rewrites + reciprocal rank fusion",
+    "hyde_rerank": "Upgraded - HyDE + question pool -> cross-encoder top-3"
+  },
+  "summary": {
+    "baseline": {
+      "context_recall": 0.9,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.987,
+      "answered": 15
+    },
+    "rerank": {
+      "context_recall": 0.967,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.933,
+      "answered": 14
+    },
+    "hyde": {
+      "context_recall": 0.933,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.933,
+      "answered": 14
+    },
+    "fusion": {
+      "context_recall": 0.867,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.933,
+      "answered": 14
+    },
+    "hyde_rerank": {
+      "context_recall": 0.967,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.933,
+      "answered": 14
+    }
+  },
+  "rows": [
+    {
+      "pipeline": "baseline",
+      "question": "How long should my resume be if I'm an undergrad applying for internships?",
+      "gold": [
+        "G01"
+      ],
+      "retrieved": [
+        "G01",
+        "G02"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the length and content of a resume for undergraduate internship applicants.",
+      "relevance_note": "The answer directly addresses the question about the appropriate length of a resume for undergraduates applying for internships.",
+      "answer": "Your resume should be one page if you're an undergraduate applying for internships. This keeps it concise and relevant, which is important since recruiters often spend less than a minute reviewing resumes [G01].\n\nHere are some concrete steps to create an effective one-page resume:\n\n1. **Contact Information**: Start with your name, a professional email, phone number, city and state, and a link to your LinkedIn or portfolio. Avoid including a photo or personal details like your date of birth [G01].\n\n2. **Education First**: List your school, degree, major, expected graduation date, and GPA (if it's 3.0 or higher). Relevant coursework can be included but should be limited to what's pertinent to the internship [G01].\n\n3. **Focus on Experience**: The experience section is crucial. Use strong action verbs and quantify your achievements to show impact [G01].\n\n4. **Keep It Relevant**: Make sure everything included supports your application for the specific internship role [G01]."
+    },
+    {
+      "pipeline": "baseline",
+      "question": "I'm a PhD student applying for a machine learning research internship. Can my resume be two pages?",
+      "gold": [
+        "G02"
+      ],
+      "retrieved": [
+        "G01",
+        "G02"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the appropriateness of a two-page resume for a PhD student applying for a machine learning research internship.",
+      "relevance_note": "The answer directly addresses the question about the length of the resume and provides relevant advice for enhancing it.",
+      "answer": "Yes, your resume can be two pages for a machine learning research internship, especially if you have substantial research experience. The second page is appropriate if it includes publications, conference presentations, or research projects relevant to the role. If it only contains coursework or older jobs, you should condense it to one page [G02].\n\nHere are some tips to make the most of your resume:\n\n1. **Highlight Relevant Research**: Focus on your research projects and publications that directly relate to the internship.\n2. **Use Clear Formatting**: Ensure your resume is easy to read, with clear headings and bullet points.\n3. **Translate Academic Language**: Convert your research descriptions into business outcomes that industry reviewers can easily understand [G02].\n4. **Tailor for Each Application**: Customize your resume for each internship application, emphasizing the most relevant experiences.\n\nRemember, this guidance is simplified course material, and you should confirm with your university's career services for specific advice."
+    },
+    {
+      "pipeline": "baseline",
+      "question": "How should I structure my answer when an interviewer asks me to describe a time I failed?",
+      "gold": [
+        "G03"
+      ],
+      "retrieved": [
+        "G03"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the STAR method.",
+      "relevance_note": "The answer directly addresses the question by outlining how to structure a response to describe a failure.",
+      "answer": "When asked to describe a time you failed, use the STAR method to structure your answer effectively. \n\n1. **Situation**: Briefly set the scene in one or two sentences about the context of your failure.\n2. **Task**: Explain what your specific responsibilities were in that situation.\n3. **Action**: Detail the steps you personally took to address the failure; this should be the longest part of your answer. Focus on \"I\" to highlight your role.\n4. **Result**: Share the outcome, including what you learned and how you would approach it differently next time. If possible, include measurable results.\n\nRemember to connect your learning to the role you're applying for, showing that you understand the job's requirements and how you've grown from your experiences [G03]."
+    },
+    {
+      "pipeline": "baseline",
+      "question": "What SQL topics should I review before a data analyst interview?",
+      "gold": [
+        "G04"
+      ],
+      "retrieved": [
+        "G04",
+        "G05"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are directly supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by listing relevant SQL topics and providing preparation steps.",
+      "answer": "Before your data analyst interview, review these SQL topics: joins, GROUP BY with aggregation, filtering with HAVING, window functions (like ROW_NUMBER and LAG), and handling NULL values. \n\nHere are some concrete steps to prepare:\n\n1. **Practice SQL Queries**: Work on problems that involve the key topics mentioned. Focus on understanding how to use joins and aggregations effectively.\n\n2. **Read Table Schemas**: Before writing queries, practice reading and interpreting table schemas. Say aloud what each table represents to ensure clarity in your thought process.\n\n3. **Simulate Interview Conditions**: Talk through your thought process as you solve SQL problems. This will help you get used to explaining your reasoning to an interviewer.\n\n4. **Brush Up on Statistics**: Be prepared for potential statistics questions related to A/B tests, p-values, or sampling bias, as these may come up in your interview [G04]. \n\nRemember, this is simplified course material, and you should confirm details with your university's career services."
+    },
+    {
+      "pipeline": "baseline",
+      "question": "How do I reach out to an alum for a coffee chat without it being awkward?",
+      "gold": [
+        "G05"
+      ],
+      "retrieved": [
+        "G05"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding how to reach out to an alum for a coffee chat.",
+      "relevance_note": "The answer directly addresses the question by providing clear steps to initiate a coffee chat without awkwardness.",
+      "answer": "To reach out to an alum for a coffee chat without it being awkward, keep your message clear and concise. Start by introducing yourself and explaining why you’re interested in speaking with them.\n\nHere are some steps to follow:\n\n1. **Craft a Short Message**: Introduce yourself in one sentence, mention your university and major, and explain why you’re reaching out. For example: \"Hi [Alum's Name], I'm a junior studying [Your Major] at [University], and I noticed your experience in [specific field].\"\n\n2. **Request a Brief Chat**: Politely ask if they would have 15-20 minutes to chat at their convenience. This shows respect for their time.\n\n3. **Follow Up**: After the chat, send a thank-you note within 24 hours, mentioning a specific piece of advice you plan to act on. This helps build a relationship [G05].\n\n4. **Keep Track**: Maintain a simple spreadsheet of your contacts, discussions, and follow-up dates to stay organized [G05]. \n\nNetworking is about building relationships, not just asking for jobs [G05]."
+    },
+    {
+      "pipeline": "baseline",
+      "question": "Is it okay to accept an unpaid internship that only gives academic credit?",
+      "gold": [
+        "G06"
+      ],
+      "retrieved": [
+        "G06",
+        "G13"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are supported by the retrieved context, particularly regarding the evaluation of unpaid internships and the importance of discussing with the career center.",
+      "relevance_note": "The answer directly addresses the question by outlining considerations for accepting an unpaid internship that offers only academic credit.",
+      "answer": "Accepting an unpaid internship that only offers academic credit can be acceptable, but it requires careful consideration. Academic credit alone does not guarantee that the internship is fair or beneficial to you. \n\nHere are some steps to take:\n\n1. **Evaluate the Role**: Ensure the internship primarily benefits you, typically through training related to your academic program, rather than just providing free labor [G06].\n\n2. **Discuss with Career Center**: If the unpaid internship requires you to perform the same tasks as paid staff, consult your career center before making a decision [G06].\n\n3. **Understand Your Rights**: Familiarize yourself with the \"primary beneficiary\" test used by the Department of Labor for unpaid internships, especially if it's with a for-profit employer [G06].\n\n4. **Consider Alternatives**: If you're waiting on other offers, it’s okay to ask for more time to decide, as long as you communicate professionally [G06].\n\nRemember, this is simplified course material, and you should confirm specifics with your university's international student office if applicable."
+    },
+    {
+      "pipeline": "baseline",
+      "question": "Can I negotiate pay for an internship at a big company?",
+      "gold": [
+        "G07"
+      ],
+      "retrieved": [
+        "G06",
+        "G07"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims made in the answer are supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the question about negotiating pay for an internship at a big company.",
+      "answer": "Yes, you can negotiate pay for an internship at a big company, but it may not always be possible since many have fixed pay rates. Here are some steps to consider:\n\n1. **Research Market Rates**: Look into what similar roles in your city pay using your career center's salary survey and other data. This will give you a solid foundation for your negotiation [G07].\n\n2. **Identify Your Priorities**: Determine what aspects of the offer matter most to you—whether it's pay, start date, remote flexibility, or housing support [G07].\n\n3. **Leverage Competing Offers**: If you have another offer at a higher rate, use that as a negotiating tool. For example, you might say, \"I have another offer at $32 an hour. Is there any flexibility to get closer to that rate?\" [G07].\n\n4. **Negotiate Enthusiastically**: Approach the conversation with excitement about the role and be specific about what you want [G07].\n\nRemember, this is simplified course material, and you should confirm details with your university's career services or international student office."
+    },
+    {
+      "pipeline": "baseline",
+      "question": "I'm on an F-1 visa. What's the difference between CPT and OPT for a summer internship?",
+      "gold": [
+        "G10"
+      ],
+      "retrieved": [
+        "G06",
+        "G10"
+      ],
+      "status": "answered",
+      "judge_badge": "pass after retry",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.8,
+      "faithfulness_note": "The answer accurately reflects the information provided in the retrieved context regarding CPT and its requirements.",
+      "relevance_note": "The answer primarily focuses on CPT and provides relevant steps for securing an internship, but it could include more details about OPT to fully address the comparison.",
+      "answer": "CPT (Curricular Practical Training) and OPT (Optional Practical Training) are both work authorization options for F-1 visa students, but they serve different purposes. CPT is for internships that are part of your curriculum and requires authorization from your school's Designated School Official. It is tied to a specific employer and dates, and you usually need to complete one full academic year before being eligible for it [G10].\n\nHere are some steps to consider for your summer internship:\n\n1. **Check Eligibility**: Make sure you meet your school's requirements for CPT, including any necessary coursework.\n2. **Talk to Your DSO**: Consult your university's international student office to get the CPT authorization process started.\n3. **Secure an Internship**: Find an internship that aligns with your curriculum and is willing to provide the necessary documentation for CPT.\n4. **Plan for OPT**: If you want to work in your field after graduation, familiarize yourself with the OPT process and requirements, but remember to confirm details with your DSO.\n\nThis information is simplified course material and not legal guidance. Always confirm your options with your university's international student office."
+    },
+    {
+      "pipeline": "baseline",
+      "question": "Should I bring printed copies of my resume to the career fair?",
+      "gold": [
+        "G11"
+      ],
+      "retrieved": [
+        "G01",
+        "G02",
+        "G11"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are supported by the context, particularly regarding the importance of bringing printed resumes and tailoring them for specific roles.",
+      "relevance_note": "The answer directly addresses the question by affirmatively stating that printed copies of resumes should be brought to the career fair.",
+      "answer": "Yes, you should bring printed copies of your resume to the career fair. Here are some steps to prepare:\n\n1. **Print Enough Copies**: Bring several copies of your resume to distribute to employers. Aim for at least 10-15, depending on how many employers you plan to meet.\n\n2. **Tailor Your Resume**: Customize your resume for the specific roles you’re interested in. Highlight relevant experiences and skills that match the job descriptions of your priority employers [G01].\n\n3. **Organize Your Approach**: Prioritize the employers you want to meet and practice your introduction. This will help you feel more confident when you hand out your resume [G11].\n\n4. **Use a Simple Format**: Ensure your resume is easy to read and follows a simple layout. Avoid complex designs that might not be parsed correctly by applicant tracking systems [G01].\n\nRemember, this is simplified course material, and you should confirm specifics with your career services office."
+    },
+    {
+      "pipeline": "baseline",
+      "question": "What should I focus on during my first week at my internship?",
+      "gold": [
+        "G08"
+      ],
+      "retrieved": [
+        "G08"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are directly supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by outlining specific actions to focus on during the first week of an internship.",
+      "answer": "During your first week at your internship, focus on building relationships and understanding expectations. Here are some concrete steps:\n\n1. **Meet with Your Manager**: Discuss and agree on what success looks like by the end of your internship. Write it down and confirm via email to ensure clarity [G08].\n\n2. **Learn Your Team**: Familiarize yourself with the names and roles of your team members and those your project depends on. This will help you navigate your work environment better [G08].\n\n3. **Ask Good Questions**: When you encounter challenges, spend 15-30 minutes trying to solve them on your own first. Then, ask questions, explaining what you’ve already tried. This shows initiative and respects others' time [G08].\n\n4. **Communicate Effectively**: Find out how your manager prefers to communicate—whether through chat, email, or scheduled meetings—and adapt accordingly [G08]. \n\nRemember, professionalism is key in your first month!"
+    },
+    {
+      "pipeline": "baseline",
+      "question": "My friend says a resume must always be one page, but I'm finishing a master's with two publications. Who's right?",
+      "gold": [
+        "G01",
+        "G02"
+      ],
+      "retrieved": [
+        "G01",
+        "G02"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the appropriateness of a two-page resume for graduate students with substantial research experience.",
+      "relevance_note": "The answer directly addresses the question by confirming that a two-page resume is acceptable for the user's situation.",
+      "answer": "You're correct that a resume can be more than one page, especially for graduate students like yourself. If you have substantial research experience and publications, a two-page resume is acceptable for industry internships in fields like data science or research engineering, as long as the second page is relevant to the role [G02].\n\nHere are some tips to consider:\n\n1. **Tailor Your Content**: Ensure that the second page includes publications, conference presentations, or research projects that align with the job you're applying for [G02].\n\n2. **Focus on Relevance**: If the second page contains only coursework or older jobs, consider trimming it back to one page [G02].\n\n3. **Use Clear Language**: When detailing your research, translate academic jargon into business outcomes that industry reviewers will appreciate [G02].\n\n4. **Differentiate Between Resume and CV**: Remember that a CV is more comprehensive and should be used for academic positions, while a resume is suitable for industry roles [G02]. \n\nThis guidance is simplified course material, and you should confirm specifics with your university's career services."
+    },
+    {
+      "pipeline": "baseline",
+      "question": "Is the fall recruiting expo on Zoom this year, and do I need paper copies of anything?",
+      "gold": [
+        "G11"
+      ],
+      "retrieved": [
+        "G12",
+        "G14"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 0.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the information from the retrieved context regarding the virtual nature of the expo and the need to upload a resume as a PDF.",
+      "relevance_note": "The answer directly addresses the question about the format of the recruiting expo and the requirement for paper copies.",
+      "answer": "The fall recruiting expo is virtual this year, and you do not need paper copies of anything. Instead, you should upload your resume as a PDF to your fair profile for recruiters to view before your session [G12].\n\nHere are some tips to prepare:\n\n1. **Test Your Tech**: Check your camera, microphone, and internet connection the day before the event. Close any unnecessary applications to ensure your computer runs smoothly [G12].\n   \n2. **Choose Your Space**: Find a quiet, well-lit area with a plain background. Position your camera at eye level for the best view [G12].\n\n3. **Prepare Your Profile**: Make sure your fair profile includes a short headline about the role you want, and have a brief introduction ready [G12]. \n\nRemember, this information is simplified course material, and you should confirm details with the international student office."
+    },
+    {
+      "pipeline": "baseline",
+      "question": "A startup offered me $28 an hour and a bigger company offered $32. How should I weigh them, and can I use one offer to negotiate the other?",
+      "gold": [
+        "G06",
+        "G07"
+      ],
+      "retrieved": [
+        "G07"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 0.5,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are supported by the retrieved context, including the importance of identifying priorities, negotiating respectfully, exploring other benefits, and getting changes in writing.",
+      "relevance_note": "The answer directly addresses the question by providing a structured approach to weigh the offers and negotiate effectively.",
+      "answer": "To weigh the two offers, consider your priorities beyond just pay, such as the team, work culture, and benefits. You can use the higher offer to negotiate with the startup, but be honest about it.\n\nHere are some steps to follow:\n\n1. **Identify Your Priorities**: Determine what's most important to you—salary, team, remote work, etc. This will guide your decision-making [G07].\n\n2. **Negotiate Respectfully**: Approach the startup with enthusiasm about their offer and mention the $32/hour offer. Ask if there's flexibility to match or get closer to that rate [G07].\n\n3. **Explore Other Benefits**: If the pay is fixed, inquire about other negotiable aspects, like housing stipends or start dates [G07].\n\n4. **Get Changes in Writing**: If you agree on any changes, ensure you receive confirmation in writing [G07].\n\nRemember, once you accept an offer, you can't negotiate further without risking trust. This advice is simplified course material; please confirm with your university's international student office for any specific policies."
+    },
+    {
+      "pipeline": "baseline",
+      "question": "What does E-Verify have to do with staying longer after graduation?",
+      "gold": [
+        "G10"
+      ],
+      "retrieved": [
+        "G02",
+        "G10"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the requirement that employers must participate in E-Verify for STEM OPT extensions, as stated in the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by explaining the connection between E-Verify and the ability to stay longer after graduation through the STEM OPT extension.",
+      "answer": "E-Verify is important for staying longer after graduation because if you're applying for a STEM OPT extension, your employer must participate in E-Verify. This program verifies the eligibility of employees to work in the U.S. [G10]. \n\nHere are some steps to consider:\n\n1. **Check Employer Participation**: Before applying for a job, confirm that the employer is enrolled in E-Verify, especially if you’re in a STEM field and considering the OPT extension.\n\n2. **Understand the Application Process**: For OPT and STEM OPT, you need to apply to U.S. Citizenship and Immigration Services and obtain an Employment Authorization Document. Start this process early, as it can take several months [G10].\n\n3. **Consult Your International Student Office**: Always discuss your specific situation and options with your university's international student office or a qualified immigration attorney, as immigration rules can change and vary by individual circumstances [G10]. \n\nRemember, this is simplified course material, and you must confirm details with the international student office."
+    },
+    {
+      "pipeline": "baseline",
+      "question": "Halfway through my summer job my manager gave me feedback. How do I make sure they ask me back full-time?",
+      "gold": [
+        "G13"
+      ],
+      "retrieved": [
+        "G13"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are directly supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by providing actionable steps to secure a full-time offer.",
+      "answer": "To increase your chances of getting a full-time offer after your summer job, follow these steps:\n\n1. **Ask for Feedback**: Midway through your internship, ask your manager directly, \"If my internship ended today, would I be on track for a return offer? What should I do differently in the second half?\" This shows initiative and helps you understand expectations [G13].\n\n2. **Deliver Your Project**: Focus on completing your projects and making their impact clear. Managers remember interns who finish strong and can articulate the significance of their work [G13].\n\n3. **Build Relationships**: Connect with your teammates, not just your manager. Their informal opinions can influence your evaluation, so be someone they enjoy working with [G13].\n\n4. **Document Accomplishments**: Keep a log of your achievements, including quantifiable results like hours saved or errors reduced. This will help you present your contributions effectively during evaluations [G13]. \n\nRemember, these tips are simplified course material, and you should confirm specifics with your manager or HR."
+    },
+    {
+      "pipeline": "rerank",
+      "question": "How long should my resume be if I'm an undergrad applying for internships?",
+      "gold": [
+        "G01"
+      ],
+      "retrieved": [
+        "G01",
+        "G02"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the length and content of a resume for undergraduate internship applicants.",
+      "relevance_note": "The answer directly addresses the question about the appropriate length of a resume for undergraduates applying for internships.",
+      "answer": "Your resume should be one page if you're an undergraduate applying for internships. This keeps it concise and relevant, which is important since recruiters often spend less than a minute reviewing resumes [G01].\n\nHere are some concrete steps to create an effective one-page resume:\n\n1. **Contact Information**: Start with your name, a professional email, phone number, city and state, and a link to your LinkedIn or portfolio. Avoid including a photo or personal details like your date of birth [G01].\n\n2. **Education First**: List your school, degree, major, expected graduation date, and GPA (if it's 3.0 or higher). Relevant coursework can be included but should be limited to what's pertinent to the internship [G01].\n\n3. **Focus on Experience**: The experience section is crucial. Use strong action verbs and quantify your achievements to show impact [G01].\n\n4. **Keep It Relevant**: Make sure everything included supports your application for the specific internship role [G01]."
+    },
+    {
+      "pipeline": "rerank",
+      "question": "I'm a PhD student applying for a machine learning research internship. Can my resume be two pages?",
+      "gold": [
+        "G02"
+      ],
+      "retrieved": [
+        "G01",
+        "G02"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the appropriateness of a two-page resume for a PhD student applying for a machine learning research internship.",
+      "relevance_note": "The answer directly addresses the question about the length of the resume and provides relevant advice for enhancing it.",
+      "answer": "Yes, your resume can be two pages for a machine learning research internship, especially if you have substantial research experience. The second page is appropriate if it includes publications, conference presentations, or research projects relevant to the role. If it only contains coursework or older jobs, you should condense it to one page [G02].\n\nHere are some tips to make the most of your resume:\n\n1. **Highlight Relevant Research**: Focus on your research projects and publications that directly relate to the internship.\n2. **Use Clear Formatting**: Ensure your resume is easy to read, with clear headings and bullet points.\n3. **Translate Academic Language**: Convert your research descriptions into business outcomes that industry reviewers can easily understand [G02].\n4. **Tailor for Each Application**: Customize your resume for each internship application, emphasizing the most relevant experiences.\n\nRemember, this guidance is simplified course material, and you should confirm with your university's career services for specific advice."
+    },
+    {
+      "pipeline": "rerank",
+      "question": "How should I structure my answer when an interviewer asks me to describe a time I failed?",
+      "gold": [
+        "G03"
+      ],
+      "retrieved": [
+        "G03",
+        "G04"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the STAR method.",
+      "relevance_note": "The answer directly addresses the question by outlining how to structure a response to a failure using the STAR method.",
+      "answer": "When asked to describe a time you failed, use the STAR method for a clear structure. \n\n1. **Situation**: Briefly set the scene with one or two sentences about the context of your failure.\n2. **Task**: Explain what you were responsible for in that situation.\n3. **Action**: Describe the specific steps you took to address the failure; this should be the longest part of your answer. Use \"I\" to emphasize your individual actions.\n4. **Result**: Share the outcome, even if it wasn't successful. Highlight what you learned and what you would do differently next time. \n\nPrepare a few stories in advance that map to themes like failure and learning, as these can show your self-awareness and growth [G03]."
+    },
+    {
+      "pipeline": "rerank",
+      "question": "What SQL topics should I review before a data analyst interview?",
+      "gold": [
+        "G04"
+      ],
+      "retrieved": [
+        "G04"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All the SQL topics mentioned in the answer are directly supported by the context provided.",
+      "relevance_note": "The answer directly addresses the question by listing relevant SQL topics to review before a data analyst interview.",
+      "answer": "Before a data analyst interview, review the following SQL topics:\n\n1. **Joins**: Understand how to combine data from multiple tables.\n2. **GROUP BY with Aggregation**: Be able to summarize data using functions like COUNT, SUM, AVG, etc.\n3. **Filtering with HAVING**: Know how to filter results after aggregation.\n4. **Window Functions**: Familiarize yourself with functions like ROW_NUMBER and LAG.\n5. **Handling NULL Values**: Be prepared to manage NULLs in your queries.\n\nAdditionally, read the table schema carefully and articulate what each table represents before writing your queries. Practicing these topics will help you feel more confident during your interview [G04]."
+    },
+    {
+      "pipeline": "rerank",
+      "question": "How do I reach out to an alum for a coffee chat without it being awkward?",
+      "gold": [
+        "G05"
+      ],
+      "retrieved": [
+        "G05",
+        "G08",
+        "G12"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context about reaching out for informational interviews.",
+      "relevance_note": "The answer directly addresses the question by providing clear steps to reach out for a coffee chat without awkwardness.",
+      "answer": "To reach out to an alum for a coffee chat without it being awkward, keep your message clear and concise. Start with a brief introduction, explain why you're interested in speaking with them, and suggest a specific time frame for the chat.\n\nHere are some steps to follow:\n\n1. **Craft a Short Message**: Introduce yourself in one sentence, mention your connection (like being from the same university), and explain why you admire their career path or expertise [G05].\n\n2. **Be Specific**: Clearly state the reason for your request, such as wanting to learn about their transition from one field to another [G05].\n\n3. **Suggest a Timeframe**: Propose a 15-20 minute chat at their convenience, making it easy for them to say yes [G05].\n\n4. **Follow Up**: If they agree, thank them in advance and prepare some thoughtful questions to make the conversation engaging.\n\nRemember, it’s just a chat to learn, not a job interview!"
+    },
+    {
+      "pipeline": "rerank",
+      "question": "Is it okay to accept an unpaid internship that only gives academic credit?",
+      "gold": [
+        "G06"
+      ],
+      "retrieved": [
+        "G06",
+        "G10"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the context provided, emphasizing the need for the internship to primarily benefit the intern and the importance of consulting the career center.",
+      "relevance_note": "The answer directly addresses the question about accepting an unpaid internship that offers only academic credit by outlining considerations and steps to evaluate such opportunities.",
+      "answer": "It's important to evaluate unpaid internships carefully. Accepting one that only offers academic credit can be okay, but it must primarily benefit you as the intern, not just provide free labor. If the unpaid role requires you to do the same work as paid staff, you should discuss it with your career center before accepting [G06].\n\nHere are some steps to consider:\n\n1. **Assess the Role**: Ensure the internship offers meaningful training and experience related to your academic program.\n2. **Consult Your Career Center**: Talk to them about the specifics of the unpaid internship to ensure it aligns with your career goals.\n3. **Understand Your Rights**: Familiarize yourself with the \"primary beneficiary\" test for unpaid internships to ensure it meets legal standards [G06].\n4. **Check Work Authorization**: If you're an international student, confirm you have the necessary authorization for unpaid internships with your university's international student office [G10].\n\nRemember, this is simplified course material, and you should always verify details with the appropriate offices."
+    },
+    {
+      "pipeline": "rerank",
+      "question": "Can I negotiate pay for an internship at a big company?",
+      "gold": [
+        "G07"
+      ],
+      "retrieved": [
+        "G07"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the context provided, stating that while pay may be fixed at large companies, other aspects can be negotiated.",
+      "relevance_note": "The answer directly addresses the question about negotiating pay for an internship by outlining the possibility and conditions for negotiation.",
+      "answer": "Yes, you can negotiate pay for an internship at a big company, but it's important to know that many large companies have fixed pay rates for interns. However, you can negotiate other aspects of the offer, such as start dates, project placements, or housing support [G07]. \n\nHere are some steps to consider:\n\n1. **Research**: Look into market rates for similar roles in your area using salary surveys and data from your career center [G07].\n   \n2. **Know Your Priorities**: Decide what matters most to you—whether it's pay, start date, or remote flexibility [G07].\n\n3. **Use Competing Offers**: If you have another offer with a higher rate, mention it during negotiations to increase your chances of a better pay rate [G07].\n\n4. **Be Respectful**: If the company states that pay is fixed, thank them and inquire about other negotiable aspects [G07]. \n\nRemember, once you accept an offer, you cannot negotiate the terms anymore. This is simplified course material, so please confirm with your international student office."
+    },
+    {
+      "pipeline": "rerank",
+      "question": "I'm on an F-1 visa. What's the difference between CPT and OPT for a summer internship?",
+      "gold": [
+        "G10"
+      ],
+      "retrieved": [
+        "G10"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the information provided in the retrieved context regarding CPT and OPT.",
+      "relevance_note": "The answer directly addresses the question by clearly explaining the differences between CPT and OPT for summer internships.",
+      "answer": "CPT (Curricular Practical Training) and OPT (Optional Practical Training) are two options for F-1 students seeking internships. \n\n1. **CPT** is for internships that are part of your curriculum, requiring a job offer before applying. It's authorized by your school's Designated School Official and is tied to specific employers and dates. You typically need to complete one academic year before being eligible, though some graduate programs allow earlier access [G10].\n\n2. **OPT** allows for up to twelve months of work authorization related to your field of study, which can be used during or after your studies. It requires an application to U.S. Citizenship and Immigration Services and an approved Employment Authorization Document, so you need to plan ahead [G10].\n\nAlways confirm your options with your university's international student office, as immigration rules can change and individual situations differ. This is simplified course material and not legal guidance."
+    },
+    {
+      "pipeline": "rerank",
+      "question": "Should I bring printed copies of my resume to the career fair?",
+      "gold": [
+        "G11"
+      ],
+      "retrieved": [
+        "G11",
+        "G12"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance from the retrieved context, specifically recommending bringing printed copies of resumes to the career fair.",
+      "relevance_note": "The answer directly addresses the question by confirming the importance of bringing printed resumes to the career fair.",
+      "answer": "Yes, you should bring printed copies of your resume to the career fair. It's recommended to have about fifteen copies in a folder, even though many employers will also ask you to apply online [G11].\n\nHere are some steps to prepare:\n\n1. **Print Your Resume**: Make sure your resume is up-to-date and printed neatly.\n2. **Organize in a Folder**: Use a professional-looking folder to keep your resumes clean and presentable.\n3. **Practice Your Introduction**: Prepare a thirty-second introduction about yourself, including your name, major, and relevant experiences [G11].\n4. **Research Employers**: Identify your top employers and read about their open positions before the fair [G11].\n\nRemember, this advice is simplified course material, and you should confirm with the international student office for any specific requirements."
+    },
+    {
+      "pipeline": "rerank",
+      "question": "What should I focus on during my first week at my internship?",
+      "gold": [
+        "G08"
+      ],
+      "retrieved": [
+        "G08"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are directly supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by outlining specific actions to focus on during the first week of an internship.",
+      "answer": "During your first week at your internship, focus on establishing a strong foundation for your time there. Here are some key steps:\n\n1. **Meet with Your Manager**: Discuss and write down what success looks like by the end of your internship. Confirm this via email to ensure clarity [G08].\n\n2. **Learn Your Team**: Familiarize yourself with the names and roles of your team members and those involved in your project. This helps you understand the dynamics and who to approach for specific questions [G08].\n\n3. **Ask Good Questions**: When you encounter a problem, spend 15-30 minutes trying to solve it on your own first. When you do ask for help, explain what you've already tried to show initiative [G08].\n\n4. **Communicate Regularly**: Send a weekly update to your manager summarizing what you've completed, what you're working on, and any obstacles you're facing. This keeps your progress visible without needing constant meetings [G08]. \n\nRemember, professionalism is key in these early days!"
+    },
+    {
+      "pipeline": "rerank",
+      "question": "My friend says a resume must always be one page, but I'm finishing a master's with two publications. Who's right?",
+      "gold": [
+        "G01",
+        "G02"
+      ],
+      "retrieved": [
+        "G01",
+        "G02"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the appropriateness of a two-page resume for graduate students with substantial research experience.",
+      "relevance_note": "The answer directly addresses the question by confirming that a two-page resume is acceptable for the user's situation.",
+      "answer": "You're correct that a resume can be more than one page, especially for graduate students like yourself. If you have substantial research experience and publications, a two-page resume is acceptable for industry internships in fields like data science or research engineering, as long as the second page is relevant to the role [G02].\n\nHere are some tips to consider:\n\n1. **Tailor Your Content**: Ensure that the second page includes publications, conference presentations, or research projects that align with the job you're applying for [G02].\n\n2. **Focus on Relevance**: If the second page contains only coursework or older jobs, consider trimming it back to one page [G02].\n\n3. **Use Clear Language**: When detailing your research, translate academic jargon into business outcomes that industry reviewers will appreciate [G02].\n\n4. **Differentiate Between Resume and CV**: Remember that a CV is more comprehensive and should be used for academic positions, while a resume is suitable for industry roles [G02]. \n\nThis guidance is simplified course material, and you should confirm specifics with your university's career services."
+    },
+    {
+      "pipeline": "rerank",
+      "question": "Is the fall recruiting expo on Zoom this year, and do I need paper copies of anything?",
+      "gold": [
+        "G11"
+      ],
+      "retrieved": [
+        "G11",
+        "G12"
+      ],
+      "status": "routed",
+      "judge_badge": "fail -> routed to human",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.0,
+      "faithfulness_note": "Refused/routed: no claims made.",
+      "relevance_note": "Refused/routed: question not answered.",
+      "answer": "I can't answer this reliably from the CareerCompass guides, so I'm handing it to a human. Please book a 20-minute appointment with a Career Center advisor (Career Center > Appointments) and mention your question; they can help with topics our guides don't cover."
+    },
+    {
+      "pipeline": "rerank",
+      "question": "A startup offered me $28 an hour and a bigger company offered $32. How should I weigh them, and can I use one offer to negotiate the other?",
+      "gold": [
+        "G06",
+        "G07"
+      ],
+      "retrieved": [
+        "G07"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 0.5,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are supported by the retrieved context, including the importance of identifying priorities, negotiating with enthusiasm, and being honest about competing offers.",
+      "relevance_note": "The answer directly addresses the question by providing a structured approach to weigh the offers and negotiate effectively.",
+      "answer": "To weigh the two offers, consider your priorities beyond just pay, such as the team you'll work with, remote flexibility, or housing support. The startup's offer of $28 an hour may have more room for negotiation than the larger company's fixed rate of $32, which is often set for all interns [G07].\n\nHere are some steps to consider:\n\n1. **Identify Your Priorities**: Determine what matters most to you—salary, team dynamics, or other benefits [G07].\n   \n2. **Negotiate with Enthusiasm**: If you prefer the startup, you can mention the higher offer during negotiations. Use a script like, \"I have another offer at $32 an hour. Is there flexibility to get closer to that rate?\" [G07].\n\n3. **Be Honest**: Never invent a competing offer; recruiters communicate with each other [G07].\n\n4. **Get Changes in Writing**: If you negotiate successfully, ensure any agreed changes are documented in an updated offer letter or email [G07].\n\nRemember, this is simplified course material, and you should confirm details with your university's career services or international student office."
+    },
+    {
+      "pipeline": "rerank",
+      "question": "What does E-Verify have to do with staying longer after graduation?",
+      "gold": [
+        "G10"
+      ],
+      "retrieved": [
+        "G10"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the requirement for E-Verify participation for employers hiring for post-completion OPT and STEM OPT extensions as stated in the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by explaining the connection between E-Verify and the ability to stay longer after graduation through OPT and STEM OPT.",
+      "answer": "E-Verify is important for staying longer after graduation because employers who want to hire you for post-completion OPT must participate in the E-Verify program. This is a requirement for those seeking a STEM OPT extension as well, which can give you up to 24 additional months of work authorization [G10].\n\nHere are some steps to consider:\n\n1. **Find E-Verify Employers**: Look for job postings that specify they participate in E-Verify. This will ensure you meet the requirements for OPT and any potential STEM extension.\n\n2. **Plan Your Application**: Remember that applying for OPT requires time. You need to submit your application to U.S. Citizenship and Immigration Services and wait for your Employment Authorization Document before starting work.\n\n3. **Consult Your International Office**: Always confirm your options and any specific requirements with your university's international student office or a qualified immigration attorney, as rules can change and individual situations differ [G10]. \n\nThis information is simplified course material, and you should verify details with the appropriate office."
+    },
+    {
+      "pipeline": "rerank",
+      "question": "Halfway through my summer job my manager gave me feedback. How do I make sure they ask me back full-time?",
+      "gold": [
+        "G13"
+      ],
+      "retrieved": [
+        "G13"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are directly supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by providing actionable steps to secure a full-time offer.",
+      "answer": "To increase your chances of getting a full-time offer after your summer job, start by understanding how return offers are decided. Here are some steps you can take:\n\n1. **Ask Early**: In the first two weeks, inquire with your manager about the criteria for return offers and what past successful interns did to stand out [G13].\n\n2. **Show Impact**: Deliver your projects and make sure to highlight their impact. Keep a log of your accomplishments with measurable outcomes, like hours saved or errors reduced, to discuss during evaluations [G13].\n\n3. **Seek Feedback**: Midway through your internship, ask your manager if you’re on track for a return offer and what you could improve in the second half [G13].\n\n4. **Be a Team Player**: Build good relationships with your teammates by being reliable and generous with credit. Their opinions can influence your evaluation [G13].\n\nRemember, this is simplified course material, and you should confirm details with your international student office."
+    },
+    {
+      "pipeline": "hyde",
+      "question": "How long should my resume be if I'm an undergrad applying for internships?",
+      "gold": [
+        "G01"
+      ],
+      "retrieved": [
+        "G01",
+        "G02"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the appropriate length of a resume for undergraduate internship applicants.",
+      "relevance_note": "The answer directly addresses the question about resume length for undergraduates applying for internships.",
+      "answer": "Your resume should be one page long if you're an undergraduate applying for internships. A second page usually means you're including irrelevant information, which can hurt your chances [G01]. \n\nHere are some tips to create an effective one-page resume:\n\n1. **Start Strong**: Include your name, professional email, phone number, city and state, and a link to your LinkedIn or portfolio. Avoid unnecessary personal details like a photo or date of birth [G01].\n\n2. **Focus on Education**: List your school, degree, major, expected graduation date, and GPA if it's 3.0 or higher. Only include relevant coursework that aligns with the job [G01].\n\n3. **Highlight Experience**: Use bullet points that start with strong action verbs, describe your contributions, and quantify results when possible. This section is crucial for demonstrating your fit for the role [G01]."
+    },
+    {
+      "pipeline": "hyde",
+      "question": "I'm a PhD student applying for a machine learning research internship. Can my resume be two pages?",
+      "gold": [
+        "G02"
+      ],
+      "retrieved": [
+        "G01",
+        "G02"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the appropriateness of a two-page resume for a PhD student applying for a machine learning research internship.",
+      "relevance_note": "The answer directly addresses the question about the length of the resume and provides relevant advice for enhancing it.",
+      "answer": "Yes, your resume can be two pages for a machine learning research internship, especially if you have substantial research experience. The second page is appropriate if it includes publications, conference presentations, or research projects relevant to the role. If it only contains coursework or older jobs, you should condense it to one page [G02].\n\nHere are some tips to make the most of your resume:\n\n1. **Highlight Relevant Research**: Focus on your research projects and publications that directly relate to the internship.\n2. **Use Clear Formatting**: Ensure your resume is easy to read, with clear headings and bullet points.\n3. **Translate Academic Language**: Convert your research descriptions into business outcomes that industry reviewers can easily understand [G02].\n4. **Tailor for Each Application**: Customize your resume for each internship application, emphasizing the most relevant experiences.\n\nRemember, this guidance is simplified course material, and you should confirm with your university's career services for specific advice."
+    },
+    {
+      "pipeline": "hyde",
+      "question": "How should I structure my answer when an interviewer asks me to describe a time I failed?",
+      "gold": [
+        "G03"
+      ],
+      "retrieved": [
+        "G03"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the STAR method and the importance of self-awareness in discussing failure.",
+      "relevance_note": "The answer directly addresses the question by outlining how to structure a response to describe a time of failure.",
+      "answer": "When asked to describe a time you failed, use the STAR method for a clear structure:\n\n1. **Situation**: Briefly set the scene in one or two sentences.\n2. **Task**: Explain your responsibilities in that situation.\n3. **Action**: Describe the specific steps you took. This should be the most detailed part of your answer.\n4. **Result**: Share the outcome, including what you learned and what you would do differently next time. Even if the result wasn't successful, focus on your self-awareness and growth.\n\nPrepare by writing down six to eight experiences that relate to failure and practice delivering them out loud. This will help you avoid common mistakes like using hypothetical examples or skipping the result [G03]."
+    },
+    {
+      "pipeline": "hyde",
+      "question": "What SQL topics should I review before a data analyst interview?",
+      "gold": [
+        "G04"
+      ],
+      "retrieved": [
+        "G04"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All the SQL topics mentioned in the answer are directly supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by listing relevant SQL topics to review before a data analyst interview.",
+      "answer": "Before your data analyst interview, review the following SQL topics:\n\n1. **Joins**: Understand how to combine data from multiple tables.\n2. **GROUP BY with Aggregation**: Practice summarizing data using functions like COUNT, SUM, AVG, etc.\n3. **Filtering with HAVING**: Know how to filter aggregated results.\n4. **Window Functions**: Familiarize yourself with functions like ROW_NUMBER and LAG.\n5. **Handling NULL Values**: Be prepared to deal with NULLs in your queries.\n\nAdditionally, always read the table schema carefully and articulate what each table represents before writing your query [G04]. This preparation will help you think critically during the interview. Good luck!"
+    },
+    {
+      "pipeline": "hyde",
+      "question": "How do I reach out to an alum for a coffee chat without it being awkward?",
+      "gold": [
+        "G05"
+      ],
+      "retrieved": [
+        "G05"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context about how to reach out to an alum for a coffee chat.",
+      "relevance_note": "The answer directly addresses the question by providing clear steps to reach out without awkwardness.",
+      "answer": "To reach out to an alum for a coffee chat without it being awkward, keep your message simple and focused. Start by introducing yourself and explaining why you're interested in talking to them.\n\nHere are some concrete steps:\n\n1. **Craft a Short Message**: Introduce yourself in one sentence, mention your university, and explain why you're reaching out. For example: \"Hi [Alum's Name], I'm a junior studying [Your Major] at [Your University], and I noticed your career path in [Specific Field].\"\n\n2. **Be Specific**: Clearly state what you want to discuss, like their transition into a new role or insights about their company. \n\n3. **Request a Brief Chat**: Politely ask for 15-20 minutes of their time, suggesting flexibility in scheduling.\n\n4. **Follow Up**: If they agree to chat, send a thank-you note afterward and mention something specific you learned from the conversation [G05]. \n\nThis approach makes it easier for them to respond positively!"
+    },
+    {
+      "pipeline": "hyde",
+      "question": "Is it okay to accept an unpaid internship that only gives academic credit?",
+      "gold": [
+        "G06"
+      ],
+      "retrieved": [
+        "G06",
+        "G13"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are supported by the retrieved context, particularly regarding the evaluation of unpaid internships and the importance of discussing with the career center.",
+      "relevance_note": "The answer directly addresses the question by outlining considerations for accepting an unpaid internship that offers only academic credit.",
+      "answer": "Accepting an unpaid internship that only offers academic credit can be acceptable, but it requires careful consideration. Academic credit alone does not guarantee that the internship is fair or beneficial to you. \n\nHere are some steps to take:\n\n1. **Evaluate the Role**: Ensure the internship primarily benefits you, typically through training related to your academic program, rather than just providing free labor [G06].\n\n2. **Discuss with Career Center**: If the unpaid internship requires you to perform the same tasks as paid staff, consult your career center before making a decision [G06].\n\n3. **Understand Your Rights**: Familiarize yourself with the \"primary beneficiary\" test used by the Department of Labor for unpaid internships, especially if it's with a for-profit employer [G06].\n\n4. **Consider Alternatives**: If you're waiting on other offers, it’s okay to ask for more time to decide, as long as you communicate professionally [G06].\n\nRemember, this is simplified course material, and you should confirm specifics with your university's international student office if applicable."
+    },
+    {
+      "pipeline": "hyde",
+      "question": "Can I negotiate pay for an internship at a big company?",
+      "gold": [
+        "G07"
+      ],
+      "retrieved": [
+        "G07"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the context provided, stating that while pay is often fixed, other aspects of the offer can be negotiated.",
+      "relevance_note": "The answer directly addresses the question about negotiating pay for an internship at a big company and provides relevant steps to consider.",
+      "answer": "Yes, you can negotiate pay for an internship at a big company, but it's often fixed for all interns. However, other aspects of the offer may be negotiable, such as start dates, team placement, or housing support [G07]. Here are some steps to consider:\n\n1. **Research**: Look into market rates for similar roles in your area using salary surveys and data from your career center [G07].\n\n2. **Know Your Priorities**: Decide what matters most to you—pay, start date, remote work, etc. This will guide your negotiation [G07].\n\n3. **Ask Respectfully**: If the pay is fixed, inquire about other flexible parts of the offer. Use a script to express your enthusiasm and mention any competing offers you have [G07].\n\n4. **Get Changes in Writing**: If you agree on any changes, ensure you receive confirmation in writing, like an updated offer letter [G07].\n\nRemember, once you accept an offer, the terms are set, and negotiating afterward can harm trust [G07]."
+    },
+    {
+      "pipeline": "hyde",
+      "question": "I'm on an F-1 visa. What's the difference between CPT and OPT for a summer internship?",
+      "gold": [
+        "G10"
+      ],
+      "retrieved": [
+        "G10"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims made in the answer are directly supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the differences between CPT and OPT as requested in the question.",
+      "answer": "CPT (Curricular Practical Training) and OPT (Optional Practical Training) are two different work authorization options for F-1 visa students. \n\n1. **CPT** is tied to your curriculum and requires you to have a job offer before applying. It’s authorized by your school’s Designated School Official and is specific to an employer and dates. Many schools require you to complete one full academic year before you can use CPT, although some graduate programs may allow it sooner [G10].\n\n2. **OPT** can be used during or after your studies. It requires an application to U.S. Citizenship and Immigration Services and an approved Employment Authorization Document, which can take several months to process. Time used for pre-completion OPT counts against the total twelve months available after graduation [G10].\n\nMake sure to confirm your options with your university's international student office, as immigration rules can change [G10]."
+    },
+    {
+      "pipeline": "hyde",
+      "question": "Should I bring printed copies of my resume to the career fair?",
+      "gold": [
+        "G11"
+      ],
+      "retrieved": [
+        "G01",
+        "G02",
+        "G14"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 0.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are supported by the context regarding resume preparation and formatting.",
+      "relevance_note": "The answer directly addresses the question by affirmatively stating that printed copies of the resume should be brought to the career fair.",
+      "answer": "Yes, you should bring printed copies of your resume to the career fair. Here are some steps to prepare:\n\n1. **Print Multiple Copies**: Bring enough copies to hand out to different recruiters you meet. This ensures you can share your resume with everyone you connect with.\n\n2. **Tailor Your Resume**: Customize your resume for the specific roles you’re interested in. Highlight relevant experiences and skills that match the job descriptions you’re targeting [G01].\n\n3. **Use a Simple Format**: Ensure your resume is in a single-column layout with standard headings. Avoid complex designs that might not be read correctly by applicant tracking systems [G01].\n\n4. **Save as PDF**: Name your resume file with your first and last name and save it as a PDF to maintain formatting when printed or shared digitally [G01].\n\nRemember, this is simplified course material, and you should confirm specific requirements with your career services office."
+    },
+    {
+      "pipeline": "hyde",
+      "question": "What should I focus on during my first week at my internship?",
+      "gold": [
+        "G08"
+      ],
+      "retrieved": [
+        "G08"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are directly supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by outlining specific actions to focus on during the first week of an internship.",
+      "answer": "During your first week at your internship, focus on building relationships and understanding expectations. Here are some concrete steps:\n\n1. **Meet with Your Manager**: Discuss and agree on what success looks like by the end of your internship. Write it down and confirm via email to ensure clarity [G08].\n\n2. **Learn Your Team**: Familiarize yourself with the names and roles of your team members and those your project depends on. This will help you navigate your work environment better [G08].\n\n3. **Ask Good Questions**: When you encounter challenges, spend 15-30 minutes trying to solve them on your own first. Then, ask questions, explaining what you’ve already tried. This shows initiative and respects others' time [G08].\n\n4. **Communicate Effectively**: Find out how your manager prefers to communicate—whether through chat, email, or scheduled meetings—and adapt accordingly [G08]. \n\nRemember, professionalism is key in your first month!"
+    },
+    {
+      "pipeline": "hyde",
+      "question": "My friend says a resume must always be one page, but I'm finishing a master's with two publications. Who's right?",
+      "gold": [
+        "G01",
+        "G02"
+      ],
+      "retrieved": [
+        "G01",
+        "G02"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the appropriateness of a two-page resume for graduate students with substantial research experience.",
+      "relevance_note": "The answer directly addresses the question by confirming that a two-page resume is acceptable for the user's situation.",
+      "answer": "You're correct that a resume can be more than one page, especially for graduate students like yourself. If you have substantial research experience and publications, a two-page resume is acceptable for industry internships in fields like data science or research engineering, as long as the second page is relevant to the role [G02].\n\nHere are some tips to consider:\n\n1. **Tailor Your Content**: Ensure that the second page includes publications, conference presentations, or research projects that align with the job you're applying for [G02].\n\n2. **Focus on Relevance**: If the second page contains only coursework or older jobs, consider trimming it back to one page [G02].\n\n3. **Use Clear Language**: When detailing your research, translate academic jargon into business outcomes that industry reviewers will appreciate [G02].\n\n4. **Differentiate Between Resume and CV**: Remember that a CV is more comprehensive and should be used for academic positions, while a resume is suitable for industry roles [G02]. \n\nThis guidance is simplified course material, and you should confirm specifics with your university's career services."
+    },
+    {
+      "pipeline": "hyde",
+      "question": "Is the fall recruiting expo on Zoom this year, and do I need paper copies of anything?",
+      "gold": [
+        "G11"
+      ],
+      "retrieved": [
+        "G11",
+        "G12"
+      ],
+      "status": "routed",
+      "judge_badge": "fail -> routed to human",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.0,
+      "faithfulness_note": "Refused/routed: no claims made.",
+      "relevance_note": "Refused/routed: question not answered.",
+      "answer": "I can't answer this reliably from the CareerCompass guides, so I'm handing it to a human. Please book a 20-minute appointment with a Career Center advisor (Career Center > Appointments) and mention your question; they can help with topics our guides don't cover."
+    },
+    {
+      "pipeline": "hyde",
+      "question": "A startup offered me $28 an hour and a bigger company offered $32. How should I weigh them, and can I use one offer to negotiate the other?",
+      "gold": [
+        "G06",
+        "G07"
+      ],
+      "retrieved": [
+        "G06",
+        "G07"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are supported by the retrieved context, including evaluating work, mentorship, negotiation strategies, and knowing personal priorities.",
+      "relevance_note": "The answer directly addresses the question by providing a structured approach to weigh the offers and negotiate effectively.",
+      "answer": "To weigh your offers, consider more than just the hourly rate. While the startup offers $28 and the larger company $32, think about factors like the work you'll do, mentorship opportunities, and total compensation. \n\n1. **Evaluate the Work**: Look at the projects you'll be involved in. Which role offers more meaningful work or learning opportunities? [G06]\n   \n2. **Consider Mentorship**: Investigate who your manager will be and the support you'll receive. A strong mentorship can greatly enhance your experience. [G06]\n\n3. **Negotiate**: You can use the higher offer to negotiate with the startup. Approach them with enthusiasm, mention the $32 offer, and ask if they can match or come closer to that rate. [G07]\n\n4. **Know Your Priorities**: Decide what's most important to you—pay, work environment, or other benefits—and let that guide your decision. [G07]\n\nRemember, this is simplified course material, and you should confirm details with your career center or relevant offices."
+    },
+    {
+      "pipeline": "hyde",
+      "question": "What does E-Verify have to do with staying longer after graduation?",
+      "gold": [
+        "G10"
+      ],
+      "retrieved": [
+        "G10"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims made in the answer are directly supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the relationship between E-Verify and staying longer after graduation through OPT and STEM OPT.",
+      "answer": "E-Verify is important for staying longer after graduation because employers must participate in it for you to work under Optional Practical Training (OPT) or STEM OPT. If you're considering post-graduation work, ensure your employer is E-Verify compliant.\n\nHere are some steps to take:\n\n1. **Confirm E-Verify Participation**: When applying for jobs, ask recruiters if their company participates in E-Verify, especially if you're looking for OPT opportunities [G10].\n\n2. **Understand OPT Requirements**: Remember that you need to apply for OPT and receive an Employment Authorization Document before you can start working. This process can take several months, so plan ahead [G10].\n\n3. **Track Your Time**: If you use pre-completion OPT during your studies, know that this time will reduce the total OPT time available after graduation [G10].\n\n4. **Consult Your International Student Office**: Always check with your university's international student office for guidance specific to your situation [G10]. \n\nThis information is simplified course material, and you should confirm your options with the international student office."
+    },
+    {
+      "pipeline": "hyde",
+      "question": "Halfway through my summer job my manager gave me feedback. How do I make sure they ask me back full-time?",
+      "gold": [
+        "G13"
+      ],
+      "retrieved": [
+        "G03",
+        "G05",
+        "G13"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are directly supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by providing actionable steps to secure a full-time offer.",
+      "answer": "To increase your chances of getting a full-time offer after your summer job, start by asking your manager directly if you’re on track for a return offer and what you can improve in the second half of your internship [G13]. \n\nHere are some concrete steps to take:\n\n1. **Seek Feedback**: After asking about your performance, actively implement the feedback you receive. Show that you can adapt and grow.\n   \n2. **Final Presentation**: Prepare a strong final presentation that highlights the business problem you addressed and the results you achieved. Invite team members who supported you to attend [G13].\n\n3. **Build Relationships**: Connect with your teammates, not just your manager. Being someone others enjoy working with can positively influence their evaluations of you [G13].\n\n4. **Stay Engaged**: Be reliable, curious, and generous with credit. These traits will help you leave a lasting impression [G13]. \n\nRemember, these tips are simplified course material, and you should confirm specific policies with your university's career services."
+    },
+    {
+      "pipeline": "fusion",
+      "question": "How long should my resume be if I'm an undergrad applying for internships?",
+      "gold": [
+        "G01"
+      ],
+      "retrieved": [
+        "G01",
+        "G02"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the length and content of a resume for undergraduate internship applicants.",
+      "relevance_note": "The answer directly addresses the question about the appropriate length of a resume for undergraduates applying for internships.",
+      "answer": "Your resume should be one page if you're an undergraduate applying for internships. This keeps it concise and relevant, which is important since recruiters often spend less than a minute reviewing resumes [G01].\n\nHere are some concrete steps to create an effective one-page resume:\n\n1. **Contact Information**: Start with your name, a professional email, phone number, city and state, and a link to your LinkedIn or portfolio. Avoid including a photo or personal details like your date of birth [G01].\n\n2. **Education First**: List your school, degree, major, expected graduation date, and GPA (if it's 3.0 or higher). Relevant coursework can be included but should be limited to what's pertinent to the internship [G01].\n\n3. **Focus on Experience**: The experience section is crucial. Use strong action verbs and quantify your achievements to show impact [G01].\n\n4. **Keep It Relevant**: Make sure everything included supports your application for the specific internship role [G01]."
+    },
+    {
+      "pipeline": "fusion",
+      "question": "I'm a PhD student applying for a machine learning research internship. Can my resume be two pages?",
+      "gold": [
+        "G02"
+      ],
+      "retrieved": [
+        "G01",
+        "G02"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the appropriateness of a two-page resume for a machine learning research internship.",
+      "relevance_note": "The answer directly addresses the question about the length of the resume for a machine learning research internship.",
+      "answer": "Yes, your resume can be two pages for a machine learning research internship, especially if you have substantial research experience. The second page is justified if it includes relevant publications, conference presentations, or research projects that align with the role [G02]. \n\nHere are some tips to consider:\n\n1. **Focus on Relevance**: Ensure that the content on your second page is directly related to the internship. If it includes only coursework or older jobs, consider condensing it to one page [G02].\n\n2. **Tailor Your Language**: Translate your academic achievements into business outcomes. Use clear, impactful language that highlights your skills and methods relevant to the industry [G02].\n\n3. **Keep It Organized**: Make your resume easy to read. Start with your contact information and ensure that the most important information stands out [G01].\n\nRemember, this guidance is simplified course material, and you should confirm with your university's career services or relevant office for specific advice."
+    },
+    {
+      "pipeline": "fusion",
+      "question": "How should I structure my answer when an interviewer asks me to describe a time I failed?",
+      "gold": [
+        "G03"
+      ],
+      "retrieved": [
+        "G03"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the STAR method and the importance of personal accountability.",
+      "relevance_note": "The answer directly addresses the question by outlining how to structure a response to a failure in an interview.",
+      "answer": "When asked to describe a time you failed, structure your answer using the STAR method: Situation, Task, Action, Result. \n\n1. **Situation**: Briefly set the context of your failure. What was happening at the time?\n2. **Task**: Explain your specific role and what you were trying to achieve.\n3. **Action**: Focus on the steps you personally took. This should be the longest part of your answer. Use \"I\" to highlight your actions, not \"we\" [G03].\n4. **Result**: Share the outcome, including what you learned from the experience and how it relates to the role you're applying for. Even if the result wasn't successful, emphasize your self-awareness and growth [G03].\n\nPrepare a few stories in advance that fit common themes like failure and learning. Practice delivering them out loud to ensure clarity and confidence [G03]."
+    },
+    {
+      "pipeline": "fusion",
+      "question": "What SQL topics should I review before a data analyst interview?",
+      "gold": [
+        "G04"
+      ],
+      "retrieved": [
+        "G04",
+        "G05"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are directly supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by listing relevant SQL topics and providing preparation steps.",
+      "answer": "Before your data analyst interview, review these SQL topics: joins, GROUP BY with aggregation, filtering with HAVING, window functions (like ROW_NUMBER and LAG), and handling NULL values. \n\nHere are some concrete steps to prepare:\n\n1. **Practice SQL Queries**: Work on problems that involve the key topics mentioned. Focus on understanding how to use joins and aggregations effectively.\n\n2. **Read Table Schemas**: Before writing queries, practice reading and interpreting table schemas. Say aloud what each table represents to ensure clarity in your thought process.\n\n3. **Simulate Interview Conditions**: Talk through your thought process as you solve SQL problems. This will help you get used to explaining your reasoning to an interviewer.\n\n4. **Brush Up on Statistics**: Be prepared for potential statistics questions related to A/B tests, p-values, or sampling bias, as these may come up in your interview [G04]. \n\nRemember, this is simplified course material, and you should confirm details with your university's career services."
+    },
+    {
+      "pipeline": "fusion",
+      "question": "How do I reach out to an alum for a coffee chat without it being awkward?",
+      "gold": [
+        "G05"
+      ],
+      "retrieved": [
+        "G05",
+        "G11"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context about reaching out to alumni for informational interviews.",
+      "relevance_note": "The answer directly addresses the question by providing a clear and structured approach to initiating a coffee chat with an alum.",
+      "answer": "To reach out to an alum for a coffee chat without it being awkward, keep it simple and focused. Start with a brief introduction and a clear reason for your request.\n\n1. **Craft a Short Message**: Introduce yourself in one sentence and explain why you’re reaching out. For example, \"Hi [Alum's Name], I'm a junior studying [Your Major] at [Your University], and I noticed you transitioned from [Their Previous Role] to [Current Role]. I'm curious about your experience and would love to chat for 15-20 minutes.\"\n\n2. **Be Specific**: Mention something specific about their career path or work that interests you. This shows you’ve done your homework and makes the conversation more engaging.\n\n3. **Keep it Casual**: Emphasize that it’s just a chat, not a job interview. Avoid asking for a job or referral in your first conversation.\n\n4. **Follow Up**: If they agree, confirm the time and express gratitude. If they don’t respond, a polite follow-up after a week is okay.\n\nRemember, networking is about building relationships, not just asking for jobs [G05]."
+    },
+    {
+      "pipeline": "fusion",
+      "question": "Is it okay to accept an unpaid internship that only gives academic credit?",
+      "gold": [
+        "G06"
+      ],
+      "retrieved": [
+        "G06",
+        "G10"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the context provided, emphasizing the need for the internship to primarily benefit the intern and the importance of consulting the career center.",
+      "relevance_note": "The answer directly addresses the question about accepting an unpaid internship that offers only academic credit by outlining considerations and steps to evaluate such opportunities.",
+      "answer": "It's important to evaluate unpaid internships carefully. Accepting one that only offers academic credit can be okay, but it must primarily benefit you as the intern, not just provide free labor. If the unpaid role requires you to do the same work as paid staff, you should discuss it with your career center before accepting [G06].\n\nHere are some steps to consider:\n\n1. **Assess the Role**: Ensure the internship offers meaningful training and experience related to your academic program.\n2. **Consult Your Career Center**: Talk to them about the specifics of the unpaid internship to ensure it aligns with your career goals.\n3. **Understand Your Rights**: Familiarize yourself with the \"primary beneficiary\" test for unpaid internships to ensure it meets legal standards [G06].\n4. **Check Work Authorization**: If you're an international student, confirm you have the necessary authorization for unpaid internships with your university's international student office [G10].\n\nRemember, this is simplified course material, and you should always verify details with the appropriate offices."
+    },
+    {
+      "pipeline": "fusion",
+      "question": "Can I negotiate pay for an internship at a big company?",
+      "gold": [
+        "G07"
+      ],
+      "retrieved": [
+        "G06",
+        "G07"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims made in the answer are supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the question about negotiating pay for an internship at a big company.",
+      "answer": "Yes, you can negotiate pay for an internship at a big company, but it's often fixed for the entire cohort. However, you can negotiate other aspects of the offer, such as start dates or housing support. Here are some steps to consider:\n\n1. **Research Market Rates**: Look into what similar roles pay in your city using your career center's salary survey and data from classmates or published sources [G07].\n\n2. **Know Your Priorities**: Determine what matters most to you—whether it's pay, start date, remote work options, or housing support [G07].\n\n3. **Use Competing Offers**: If you have another offer with a higher pay rate, mention it during negotiations. Be specific and enthusiastic about the role you're discussing [G07].\n\n4. **Be Honest and Specific**: When negotiating, express your excitement about the offer and ask if there's flexibility to get closer to your desired rate or discuss other benefits [G07].\n\nRemember, this is simplified course material, and you should confirm details with your university's international student office if applicable."
+    },
+    {
+      "pipeline": "fusion",
+      "question": "I'm on an F-1 visa. What's the difference between CPT and OPT for a summer internship?",
+      "gold": [
+        "G10"
+      ],
+      "retrieved": [
+        "G06",
+        "G10"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the information provided in the retrieved context regarding CPT and OPT.",
+      "relevance_note": "The answer directly addresses the question by explaining the differences between CPT and OPT for summer internships.",
+      "answer": "CPT (Curricular Practical Training) and OPT (Optional Practical Training) are both work authorization options for F-1 visa students, but they serve different purposes. \n\n1. **CPT** is for internships that are part of your curriculum and must be authorized by your school's Designated School Official (DSO). You need a job offer before applying, and it’s tied to specific employers and dates [G10]. \n\n2. **OPT**, on the other hand, allows for up to twelve months of work authorization related to your field of study and can be used during or after your studies. It requires an application to U.S. Citizenship and Immigration Services and can take several months to process [G10]. \n\nTo decide:\n- Check if your internship is part of your curriculum for CPT eligibility.\n- Ensure you have a job offer before applying for CPT.\n- If considering OPT, plan ahead for the application process. \n\nRemember, this is simplified course material, and you should confirm your options with your university's international student office."
+    },
+    {
+      "pipeline": "fusion",
+      "question": "Should I bring printed copies of my resume to the career fair?",
+      "gold": [
+        "G11"
+      ],
+      "retrieved": [
+        "G01",
+        "G02"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 0.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims made in the answer are supported by the retrieved context regarding resume preparation and presentation.",
+      "relevance_note": "The answer directly addresses the question by affirmatively stating that printed copies of the resume should be brought to the career fair.",
+      "answer": "Yes, you should bring printed copies of your resume to the career fair. Here are some steps to prepare:\n\n1. **Tailor Your Resume**: Customize your resume for the specific roles you're interested in, ensuring that the most relevant experience is highlighted first [G01].\n\n2. **Use a Simple Format**: Ensure your resume has a simple layout with standard section headings like Education, Experience, Projects, and Skills. Avoid graphics or complex formatting that may not be read properly by applicant tracking systems [G01].\n\n3. **Print Multiple Copies**: Bring several printed copies to hand out to employers. This shows preparedness and professionalism.\n\n4. **Save as PDF**: Before printing, save your resume as a PDF with your first and last name as the file name. This helps maintain formatting when viewed on different devices [G01].\n\nRemember, this is simplified course material, and you should confirm any specific requirements with your career services office."
+    },
+    {
+      "pipeline": "fusion",
+      "question": "What should I focus on during my first week at my internship?",
+      "gold": [
+        "G08"
+      ],
+      "retrieved": [
+        "G08"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are directly supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by outlining specific actions to focus on during the first week of an internship.",
+      "answer": "During your first week at your internship, focus on building relationships and understanding expectations. Here are some concrete steps:\n\n1. **Meet with Your Manager**: Discuss and agree on what success looks like by the end of your internship. Write it down and confirm via email to ensure clarity [G08].\n\n2. **Learn Your Team**: Familiarize yourself with the names and roles of your team members and those your project depends on. This will help you navigate your work environment better [G08].\n\n3. **Ask Good Questions**: When you encounter challenges, spend 15-30 minutes trying to solve them on your own first. Then, ask questions, explaining what you’ve already tried. This shows initiative and respects others' time [G08].\n\n4. **Communicate Effectively**: Find out how your manager prefers to communicate—whether through chat, email, or scheduled meetings—and adapt accordingly [G08]. \n\nRemember, professionalism is key in your first month!"
+    },
+    {
+      "pipeline": "fusion",
+      "question": "My friend says a resume must always be one page, but I'm finishing a master's with two publications. Who's right?",
+      "gold": [
+        "G01",
+        "G02"
+      ],
+      "retrieved": [
+        "G01",
+        "G02"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the appropriateness of a two-page resume for graduate students with substantial research experience.",
+      "relevance_note": "The answer directly addresses the question by confirming that a two-page resume is acceptable for the user's situation.",
+      "answer": "You're correct that a resume can be more than one page, especially for graduate students like yourself. If you have substantial research experience and publications, a two-page resume is acceptable for industry internships in fields like data science or research engineering, as long as the second page is relevant to the role [G02].\n\nHere are some tips to consider:\n\n1. **Tailor Your Content**: Ensure that the second page includes publications, conference presentations, or research projects that align with the job you're applying for [G02].\n\n2. **Focus on Relevance**: If the second page contains only coursework or older jobs, consider trimming it back to one page [G02].\n\n3. **Use Clear Language**: When detailing your research, translate academic jargon into business outcomes that industry reviewers will appreciate [G02].\n\n4. **Differentiate Between Resume and CV**: Remember that a CV is more comprehensive and should be used for academic positions, while a resume is suitable for industry roles [G02]. \n\nThis guidance is simplified course material, and you should confirm specifics with your university's career services."
+    },
+    {
+      "pipeline": "fusion",
+      "question": "Is the fall recruiting expo on Zoom this year, and do I need paper copies of anything?",
+      "gold": [
+        "G11"
+      ],
+      "retrieved": [
+        "G12"
+      ],
+      "status": "refused",
+      "judge_badge": "refused",
+      "context_recall": 0.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.0,
+      "faithfulness_note": "Refused/routed: no claims made.",
+      "relevance_note": "Refused/routed: question not answered.",
+      "answer": "I can't answer this reliably from the CareerCompass guides, so I'm handing it to a human. Please book a 20-minute appointment with a Career Center advisor (Career Center > Appointments) and mention your question; they can help with topics our guides don't cover."
+    },
+    {
+      "pipeline": "fusion",
+      "question": "A startup offered me $28 an hour and a bigger company offered $32. How should I weigh them, and can I use one offer to negotiate the other?",
+      "gold": [
+        "G06",
+        "G07"
+      ],
+      "retrieved": [
+        "G06",
+        "G07"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are supported by the retrieved context, including evaluating work quality, mentorship, negotiation strategies, and researching market rates.",
+      "relevance_note": "The answer directly addresses the question by providing a structured approach to weigh the offers and negotiate effectively.",
+      "answer": "To weigh the two offers, consider factors beyond just the hourly rate. While the startup offers $28 an hour and the larger company $32, think about what matters most to you—work quality, mentorship, or flexibility. \n\n1. **Evaluate the Work**: Look into the projects you'll be involved in. Which role offers more meaningful work or learning opportunities? [G06]\n   \n2. **Consider Mentorship**: Investigate who your manager will be and the support you'll receive. Regular feedback can enhance your experience significantly. [G06]\n\n3. **Negotiate**: You can use the higher offer to negotiate with the startup. Be honest and enthusiastic, mentioning the $32 offer and asking if they can match or come closer to that rate. [G07]\n\n4. **Research Market Rates**: Check salary surveys and peer offers to ensure you're making an informed decision. [G07]\n\nRemember, this is simplified course material, and you should confirm specifics with your university's career center."
+    },
+    {
+      "pipeline": "fusion",
+      "question": "What does E-Verify have to do with staying longer after graduation?",
+      "gold": [
+        "G10"
+      ],
+      "retrieved": [
+        "G02",
+        "G10"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the requirement that employers must participate in E-Verify for STEM OPT extensions, as stated in the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by explaining the connection between E-Verify and the ability to stay longer after graduation through the STEM OPT extension.",
+      "answer": "E-Verify is important for staying longer after graduation because if you're applying for a STEM OPT extension, your employer must participate in E-Verify. This program verifies the eligibility of employees to work in the U.S. [G10]. \n\nHere are some steps to consider:\n\n1. **Check Employer Participation**: Before applying for a job, confirm that the employer is enrolled in E-Verify, especially if you’re in a STEM field and considering the OPT extension.\n\n2. **Understand the Application Process**: For OPT and STEM OPT, you need to apply to U.S. Citizenship and Immigration Services and obtain an Employment Authorization Document. Start this process early, as it can take several months [G10].\n\n3. **Consult Your International Student Office**: Always discuss your specific situation and options with your university's international student office or a qualified immigration attorney, as immigration rules can change and vary by individual circumstances [G10]. \n\nRemember, this is simplified course material, and you must confirm details with the international student office."
+    },
+    {
+      "pipeline": "fusion",
+      "question": "Halfway through my summer job my manager gave me feedback. How do I make sure they ask me back full-time?",
+      "gold": [
+        "G13"
+      ],
+      "retrieved": [
+        "G11",
+        "G12",
+        "G13"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are directly supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by providing actionable steps to secure a full-time offer.",
+      "answer": "To increase your chances of getting a full-time offer after your summer job, start by asking your manager directly for feedback. You can say something like, \"If my internship ended today, would I be on track for a return offer? What should I do differently in the second half?\" This shows initiative and helps you understand their expectations [G13].\n\nHere are some concrete steps to follow:\n\n1. **Focus on Your Final Presentation**: Make sure it’s well-prepared, concise, and engaging. Start with the business problem and results, and leave time for questions [G13].\n\n2. **Build Relationships**: Connect with your teammates, not just your manager. Their opinions can influence your evaluation, so be someone they enjoy working with [G13].\n\n3. **Be Reliable and Curious**: Show that you’re dependable and eager to learn. This attitude can make a positive impression [G13].\n\nRemember, this is simplified course material, and you should confirm details with your international student office."
+    },
+    {
+      "pipeline": "hyde_rerank",
+      "question": "How long should my resume be if I'm an undergrad applying for internships?",
+      "gold": [
+        "G01"
+      ],
+      "retrieved": [
+        "G01",
+        "G02"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the length and content of a resume for undergraduate internship applicants.",
+      "relevance_note": "The answer directly addresses the question about the appropriate length of a resume for undergraduates applying for internships.",
+      "answer": "Your resume should be one page if you're an undergraduate applying for internships. This keeps it concise and relevant, which is important since recruiters often spend less than a minute reviewing resumes [G01].\n\nHere are some concrete steps to create an effective one-page resume:\n\n1. **Contact Information**: Start with your name, a professional email, phone number, city and state, and a link to your LinkedIn or portfolio. Avoid including a photo or personal details like your date of birth [G01].\n\n2. **Education First**: List your school, degree, major, expected graduation date, and GPA (if it's 3.0 or higher). Relevant coursework can be included but should be limited to what's pertinent to the internship [G01].\n\n3. **Focus on Experience**: The experience section is crucial. Use strong action verbs and quantify your achievements to show impact [G01].\n\n4. **Keep It Relevant**: Make sure everything included supports your application for the specific internship role [G01]."
+    },
+    {
+      "pipeline": "hyde_rerank",
+      "question": "I'm a PhD student applying for a machine learning research internship. Can my resume be two pages?",
+      "gold": [
+        "G02"
+      ],
+      "retrieved": [
+        "G01",
+        "G02"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the appropriateness of a two-page resume for a PhD student applying for a machine learning research internship.",
+      "relevance_note": "The answer directly addresses the question about the length of the resume and provides relevant advice for enhancing it.",
+      "answer": "Yes, your resume can be two pages for a machine learning research internship, especially if you have substantial research experience. The second page is appropriate if it includes publications, conference presentations, or research projects relevant to the role. If it only contains coursework or older jobs, you should condense it to one page [G02].\n\nHere are some tips to make the most of your resume:\n\n1. **Highlight Relevant Research**: Focus on your research projects and publications that directly relate to the internship.\n2. **Use Clear Formatting**: Ensure your resume is easy to read, with clear headings and bullet points.\n3. **Translate Academic Language**: Convert your research descriptions into business outcomes that industry reviewers can easily understand [G02].\n4. **Tailor for Each Application**: Customize your resume for each internship application, emphasizing the most relevant experiences.\n\nRemember, this guidance is simplified course material, and you should confirm with your university's career services for specific advice."
+    },
+    {
+      "pipeline": "hyde_rerank",
+      "question": "How should I structure my answer when an interviewer asks me to describe a time I failed?",
+      "gold": [
+        "G03"
+      ],
+      "retrieved": [
+        "G03",
+        "G04"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the STAR method.",
+      "relevance_note": "The answer directly addresses the question by outlining how to structure a response to a failure using the STAR method.",
+      "answer": "When asked to describe a time you failed, use the STAR method for a clear structure. \n\n1. **Situation**: Briefly set the scene with one or two sentences about the context of your failure.\n2. **Task**: Explain what you were responsible for in that situation.\n3. **Action**: Describe the specific steps you took to address the failure; this should be the longest part of your answer. Use \"I\" to emphasize your individual actions.\n4. **Result**: Share the outcome, even if it wasn't successful. Highlight what you learned and what you would do differently next time. \n\nPrepare a few stories in advance that map to themes like failure and learning, as these can show your self-awareness and growth [G03]."
+    },
+    {
+      "pipeline": "hyde_rerank",
+      "question": "What SQL topics should I review before a data analyst interview?",
+      "gold": [
+        "G04"
+      ],
+      "retrieved": [
+        "G04"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All the SQL topics mentioned in the answer are directly supported by the context provided.",
+      "relevance_note": "The answer directly addresses the question by listing relevant SQL topics to review before a data analyst interview.",
+      "answer": "Before a data analyst interview, review the following SQL topics:\n\n1. **Joins**: Understand how to combine data from multiple tables.\n2. **GROUP BY with Aggregation**: Be able to summarize data using functions like COUNT, SUM, AVG, etc.\n3. **Filtering with HAVING**: Know how to filter results after aggregation.\n4. **Window Functions**: Familiarize yourself with functions like ROW_NUMBER and LAG.\n5. **Handling NULL Values**: Be prepared to manage NULLs in your queries.\n\nAdditionally, read the table schema carefully and articulate what each table represents before writing your queries. Practicing these topics will help you feel more confident during your interview [G04]."
+    },
+    {
+      "pipeline": "hyde_rerank",
+      "question": "How do I reach out to an alum for a coffee chat without it being awkward?",
+      "gold": [
+        "G05"
+      ],
+      "retrieved": [
+        "G05",
+        "G08",
+        "G12"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context about reaching out for informational interviews.",
+      "relevance_note": "The answer directly addresses the question by providing clear steps to reach out for a coffee chat without awkwardness.",
+      "answer": "To reach out to an alum for a coffee chat without it being awkward, keep your message clear and concise. Start with a brief introduction, explain why you're interested in speaking with them, and suggest a specific time frame for the chat.\n\nHere are some steps to follow:\n\n1. **Craft a Short Message**: Introduce yourself in one sentence, mention your connection (like being from the same university), and explain why you admire their career path or expertise [G05].\n\n2. **Be Specific**: Clearly state the reason for your request, such as wanting to learn about their transition from one field to another [G05].\n\n3. **Suggest a Timeframe**: Propose a 15-20 minute chat at their convenience, making it easy for them to say yes [G05].\n\n4. **Follow Up**: If they agree, thank them in advance and prepare some thoughtful questions to make the conversation engaging.\n\nRemember, it’s just a chat to learn, not a job interview!"
+    },
+    {
+      "pipeline": "hyde_rerank",
+      "question": "Is it okay to accept an unpaid internship that only gives academic credit?",
+      "gold": [
+        "G06"
+      ],
+      "retrieved": [
+        "G06",
+        "G10"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the context provided, emphasizing the need for the internship to primarily benefit the intern and the importance of consulting the career center.",
+      "relevance_note": "The answer directly addresses the question about accepting an unpaid internship that offers only academic credit by outlining considerations and steps to evaluate such opportunities.",
+      "answer": "It's important to evaluate unpaid internships carefully. Accepting one that only offers academic credit can be okay, but it must primarily benefit you as the intern, not just provide free labor. If the unpaid role requires you to do the same work as paid staff, you should discuss it with your career center before accepting [G06].\n\nHere are some steps to consider:\n\n1. **Assess the Role**: Ensure the internship offers meaningful training and experience related to your academic program.\n2. **Consult Your Career Center**: Talk to them about the specifics of the unpaid internship to ensure it aligns with your career goals.\n3. **Understand Your Rights**: Familiarize yourself with the \"primary beneficiary\" test for unpaid internships to ensure it meets legal standards [G06].\n4. **Check Work Authorization**: If you're an international student, confirm you have the necessary authorization for unpaid internships with your university's international student office [G10].\n\nRemember, this is simplified course material, and you should always verify details with the appropriate offices."
+    },
+    {
+      "pipeline": "hyde_rerank",
+      "question": "Can I negotiate pay for an internship at a big company?",
+      "gold": [
+        "G07"
+      ],
+      "retrieved": [
+        "G07"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the context provided, stating that while pay may be fixed at large companies, other aspects can be negotiated.",
+      "relevance_note": "The answer directly addresses the question about negotiating pay for an internship by outlining the possibility and conditions for negotiation.",
+      "answer": "Yes, you can negotiate pay for an internship at a big company, but it's important to know that many large companies have fixed pay rates for interns. However, you can negotiate other aspects of the offer, such as start dates, project placements, or housing support [G07]. \n\nHere are some steps to consider:\n\n1. **Research**: Look into market rates for similar roles in your area using salary surveys and data from your career center [G07].\n   \n2. **Know Your Priorities**: Decide what matters most to you—whether it's pay, start date, or remote flexibility [G07].\n\n3. **Use Competing Offers**: If you have another offer with a higher rate, mention it during negotiations to increase your chances of a better pay rate [G07].\n\n4. **Be Respectful**: If the company states that pay is fixed, thank them and inquire about other negotiable aspects [G07]. \n\nRemember, once you accept an offer, you cannot negotiate the terms anymore. This is simplified course material, so please confirm with your international student office."
+    },
+    {
+      "pipeline": "hyde_rerank",
+      "question": "I'm on an F-1 visa. What's the difference between CPT and OPT for a summer internship?",
+      "gold": [
+        "G10"
+      ],
+      "retrieved": [
+        "G10"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the information provided in the retrieved context regarding CPT and OPT.",
+      "relevance_note": "The answer directly addresses the question by clearly explaining the differences between CPT and OPT for summer internships.",
+      "answer": "CPT (Curricular Practical Training) and OPT (Optional Practical Training) are two options for F-1 students seeking internships. \n\n1. **CPT** is for internships that are part of your curriculum, requiring a job offer before applying. It's authorized by your school's Designated School Official and is tied to specific employers and dates. You typically need to complete one academic year before being eligible, though some graduate programs allow earlier access [G10].\n\n2. **OPT** allows for up to twelve months of work authorization related to your field of study, which can be used during or after your studies. It requires an application to U.S. Citizenship and Immigration Services and an approved Employment Authorization Document, so you need to plan ahead [G10].\n\nAlways confirm your options with your university's international student office, as immigration rules can change and individual situations differ. This is simplified course material and not legal guidance."
+    },
+    {
+      "pipeline": "hyde_rerank",
+      "question": "Should I bring printed copies of my resume to the career fair?",
+      "gold": [
+        "G11"
+      ],
+      "retrieved": [
+        "G11",
+        "G12"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance from the retrieved context, specifically recommending bringing printed copies of resumes to the career fair.",
+      "relevance_note": "The answer directly addresses the question by confirming the importance of bringing printed resumes to the career fair.",
+      "answer": "Yes, you should bring printed copies of your resume to the career fair. It's recommended to have about fifteen copies in a folder, even though many employers will also ask you to apply online [G11].\n\nHere are some steps to prepare:\n\n1. **Print Your Resume**: Make sure your resume is up-to-date and printed neatly.\n2. **Organize in a Folder**: Use a professional-looking folder to keep your resumes clean and presentable.\n3. **Practice Your Introduction**: Prepare a thirty-second introduction about yourself, including your name, major, and relevant experiences [G11].\n4. **Research Employers**: Identify your top employers and read about their open positions before the fair [G11].\n\nRemember, this advice is simplified course material, and you should confirm with the international student office for any specific requirements."
+    },
+    {
+      "pipeline": "hyde_rerank",
+      "question": "What should I focus on during my first week at my internship?",
+      "gold": [
+        "G08"
+      ],
+      "retrieved": [
+        "G08"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are directly supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by outlining specific actions to focus on during the first week of an internship.",
+      "answer": "During your first week at your internship, focus on establishing a strong foundation for your time there. Here are some key steps:\n\n1. **Meet with Your Manager**: Discuss and write down what success looks like by the end of your internship. Confirm this via email to ensure clarity [G08].\n\n2. **Learn Your Team**: Familiarize yourself with the names and roles of your team members and those involved in your project. This helps you understand the dynamics and who to approach for specific questions [G08].\n\n3. **Ask Good Questions**: When you encounter a problem, spend 15-30 minutes trying to solve it on your own first. When you do ask for help, explain what you've already tried to show initiative [G08].\n\n4. **Communicate Regularly**: Send a weekly update to your manager summarizing what you've completed, what you're working on, and any obstacles you're facing. This keeps your progress visible without needing constant meetings [G08]. \n\nRemember, professionalism is key in these early days!"
+    },
+    {
+      "pipeline": "hyde_rerank",
+      "question": "My friend says a resume must always be one page, but I'm finishing a master's with two publications. Who's right?",
+      "gold": [
+        "G01",
+        "G02"
+      ],
+      "retrieved": [
+        "G01",
+        "G02"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the guidance provided in the retrieved context regarding the appropriateness of a two-page resume for graduate students with substantial research experience.",
+      "relevance_note": "The answer directly addresses the question by confirming that a two-page resume is acceptable for the user's situation.",
+      "answer": "You're correct that a resume can be more than one page, especially for graduate students like yourself. If you have substantial research experience and publications, a two-page resume is acceptable for industry internships in fields like data science or research engineering, as long as the second page is relevant to the role [G02].\n\nHere are some tips to consider:\n\n1. **Tailor Your Content**: Ensure that the second page includes publications, conference presentations, or research projects that align with the job you're applying for [G02].\n\n2. **Focus on Relevance**: If the second page contains only coursework or older jobs, consider trimming it back to one page [G02].\n\n3. **Use Clear Language**: When detailing your research, translate academic jargon into business outcomes that industry reviewers will appreciate [G02].\n\n4. **Differentiate Between Resume and CV**: Remember that a CV is more comprehensive and should be used for academic positions, while a resume is suitable for industry roles [G02]. \n\nThis guidance is simplified course material, and you should confirm specifics with your university's career services."
+    },
+    {
+      "pipeline": "hyde_rerank",
+      "question": "Is the fall recruiting expo on Zoom this year, and do I need paper copies of anything?",
+      "gold": [
+        "G11"
+      ],
+      "retrieved": [
+        "G11",
+        "G12"
+      ],
+      "status": "routed",
+      "judge_badge": "fail -> routed to human",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.0,
+      "faithfulness_note": "Refused/routed: no claims made.",
+      "relevance_note": "Refused/routed: question not answered.",
+      "answer": "I can't answer this reliably from the CareerCompass guides, so I'm handing it to a human. Please book a 20-minute appointment with a Career Center advisor (Career Center > Appointments) and mention your question; they can help with topics our guides don't cover."
+    },
+    {
+      "pipeline": "hyde_rerank",
+      "question": "A startup offered me $28 an hour and a bigger company offered $32. How should I weigh them, and can I use one offer to negotiate the other?",
+      "gold": [
+        "G06",
+        "G07"
+      ],
+      "retrieved": [
+        "G07"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 0.5,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are supported by the retrieved context, including the importance of identifying priorities, negotiating with enthusiasm, and being honest about competing offers.",
+      "relevance_note": "The answer directly addresses the question by providing a structured approach to weigh the offers and negotiate effectively.",
+      "answer": "To weigh the two offers, consider your priorities beyond just pay, such as the team you'll work with, remote flexibility, or housing support. The startup's offer of $28 an hour may have more room for negotiation than the larger company's fixed rate of $32, which is often set for all interns [G07].\n\nHere are some steps to consider:\n\n1. **Identify Your Priorities**: Determine what matters most to you—salary, team dynamics, or other benefits [G07].\n   \n2. **Negotiate with Enthusiasm**: If you prefer the startup, you can mention the higher offer during negotiations. Use a script like, \"I have another offer at $32 an hour. Is there flexibility to get closer to that rate?\" [G07].\n\n3. **Be Honest**: Never invent a competing offer; recruiters communicate with each other [G07].\n\n4. **Get Changes in Writing**: If you negotiate successfully, ensure any agreed changes are documented in an updated offer letter or email [G07].\n\nRemember, this is simplified course material, and you should confirm details with your university's career services or international student office."
+    },
+    {
+      "pipeline": "hyde_rerank",
+      "question": "What does E-Verify have to do with staying longer after graduation?",
+      "gold": [
+        "G10"
+      ],
+      "retrieved": [
+        "G10"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "The answer accurately reflects the requirement for E-Verify participation for STEM OPT extension as stated in the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by explaining the connection between E-Verify and the ability to stay longer after graduation through the STEM OPT extension.",
+      "answer": "E-Verify is important for staying longer after graduation because employers must participate in it for you to be eligible for a STEM OPT extension, which allows for an additional twenty-four months of work authorization in eligible STEM fields [G10]. Here are some steps to consider:\n\n1. **Research Employers**: Look for job postings that specify they participate in E-Verify, especially if you're seeking a STEM OPT extension.\n   \n2. **Ask Recruiters**: If a job listing mentions no visa sponsorship, clarify with the recruiter whether the position is open to students on CPT or OPT.\n\n3. **Track Your Documents**: Keep copies of all your work authorization documents and monitor your application dates closely.\n\n4. **Consult Your Office**: Always check with your university's international student office to confirm your options and ensure you're following the latest guidelines.\n\nRemember, this is simplified course material, and you should confirm details with your international student office."
+    },
+    {
+      "pipeline": "hyde_rerank",
+      "question": "Halfway through my summer job my manager gave me feedback. How do I make sure they ask me back full-time?",
+      "gold": [
+        "G13"
+      ],
+      "retrieved": [
+        "G13"
+      ],
+      "status": "answered",
+      "judge_badge": "pass",
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "faithfulness_note": "All claims in the answer are directly supported by the retrieved context.",
+      "relevance_note": "The answer directly addresses the question by providing actionable steps to secure a full-time offer.",
+      "answer": "To increase your chances of getting a full-time offer after your summer job, start by understanding how return offers are decided. Here are some steps you can take:\n\n1. **Ask Early**: In the first two weeks, inquire with your manager about the criteria for return offers and what past successful interns did to stand out [G13].\n\n2. **Show Impact**: Deliver your projects and make sure to highlight their impact. Keep a log of your accomplishments with measurable outcomes, like hours saved or errors reduced, to discuss during evaluations [G13].\n\n3. **Seek Feedback**: Midway through your internship, ask your manager if you’re on track for a return offer and what you could improve in the second half [G13].\n\n4. **Be a Team Player**: Build good relationships with your teammates by being reliable and generous with credit. Their opinions can influence your evaluation [G13].\n\nRemember, this is simplified course material, and you should confirm details with your international student office."
+    }
+  ],
+  "refusals": [
+    {
+      "question": "How do I file my taxes as an international student?",
+      "status": "refused",
+      "layer": "coach prompt",
+      "top_similarity": 0.475,
+      "correct": true
+    },
+    {
+      "question": "What laptop should I buy for a computer science major?",
+      "status": "refused",
+      "layer": "coach prompt",
+      "top_similarity": 0.263,
+      "correct": true
+    },
+    {
+      "question": "Can you recommend a cheap apartment near campus?",
+      "status": "refused",
+      "layer": "coach prompt",
+      "top_similarity": 0.423,
+      "correct": true
+    },
+    {
+      "question": "Who won the basketball game last night?",
+      "status": "refused",
+      "layer": "scope gate",
+      "top_similarity": 0.109,
+      "correct": true
+    }
+  ],
+  "refusal_accuracy": 1.0,
+  "search_recall_at_5": [
+    {
+      "query": "PostgreSQL",
+      "type": "exact-term",
+      "bm25": 1.0,
+      "vector": 1.0,
+      "hybrid": 1.0
+    },
+    {
+      "query": "SAP Ariba",
+      "type": "exact-term",
+      "bm25": 1.0,
+      "vector": 0.0,
+      "hybrid": 1.0
+    },
+    {
+      "query": "OR-Tools",
+      "type": "exact-term",
+      "bm25": 1.0,
+      "vector": 1.0,
+      "hybrid": 1.0
+    },
+    {
+      "query": "help a hospital understand why patients miss appointments",
+      "type": "paraphrase",
+      "bm25": 0.0,
+      "vector": 1.0,
+      "hybrid": 0.0
+    },
+    {
+      "query": "make websites usable for people who are blind",
+      "type": "paraphrase",
+      "bm25": 0.0,
+      "vector": 1.0,
+      "hybrid": 1.0
+    },
+    {
+      "query": "remote data analytics internship at a startup that sponsors international students",
+      "type": "mixed",
+      "bm25": 1.0,
+      "vector": 0.5,
+      "hybrid": 1.0
+    },
+    {
+      "query": "Figma prototyping",
+      "type": "exact-term",
+      "bm25": 1.0,
+      "vector": 1.0,
+      "hybrid": 1.0
+    }
+  ]
+}

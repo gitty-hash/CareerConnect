@@ -1,0 +1,18 @@
+[theme]
+base = "light"
+primaryColor = "#0a66c2"
+backgroundColor = "#f4f2ee"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#191919"
+font = "sans serif"
+
+[server]
+# Streamlit's file watcher crawls every imported module, including transformers' lazy
+# submodules, which floods the log and slows the server. Restart the app after editing code.
+fileWatcherType = "none"
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false

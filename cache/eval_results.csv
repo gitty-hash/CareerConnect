@@ -1,0 +1,76 @@
+pipeline,question,gold,retrieved,status,judge_badge,context_recall,faithfulness,answer_relevance
+baseline,How long should my resume be if I'm an undergrad applying for internships?,G01,G01 G02,answered,pass,1.0,1.0,1.0
+baseline,I'm a PhD student applying for a machine learning research internship. Can my resume be two pages?,G02,G01 G02,answered,pass,1.0,1.0,1.0
+baseline,How should I structure my answer when an interviewer asks me to describe a time I failed?,G03,G03,answered,pass,1.0,1.0,1.0
+baseline,What SQL topics should I review before a data analyst interview?,G04,G04 G05,answered,pass,1.0,1.0,1.0
+baseline,How do I reach out to an alum for a coffee chat without it being awkward?,G05,G05,answered,pass,1.0,1.0,1.0
+baseline,Is it okay to accept an unpaid internship that only gives academic credit?,G06,G06 G13,answered,pass,1.0,1.0,1.0
+baseline,Can I negotiate pay for an internship at a big company?,G07,G06 G07,answered,pass,1.0,1.0,1.0
+baseline,I'm on an F-1 visa. What's the difference between CPT and OPT for a summer internship?,G10,G06 G10,answered,pass after retry,1.0,1.0,0.8
+baseline,Should I bring printed copies of my resume to the career fair?,G11,G01 G02 G11,answered,pass,1.0,1.0,1.0
+baseline,What should I focus on during my first week at my internship?,G08,G08,answered,pass,1.0,1.0,1.0
+baseline,"My friend says a resume must always be one page, but I'm finishing a master's with two publications. Who's right?",G01 G02,G01 G02,answered,pass,1.0,1.0,1.0
+baseline,"Is the fall recruiting expo on Zoom this year, and do I need paper copies of anything?",G11,G12 G14,answered,pass,0.0,1.0,1.0
+baseline,"A startup offered me $28 an hour and a bigger company offered $32. How should I weigh them, and can I use one offer to negotiate the other?",G06 G07,G07,answered,pass,0.5,1.0,1.0
+baseline,What does E-Verify have to do with staying longer after graduation?,G10,G02 G10,answered,pass,1.0,1.0,1.0
+baseline,Halfway through my summer job my manager gave me feedback. How do I make sure they ask me back full-time?,G13,G13,answered,pass,1.0,1.0,1.0
+rerank,How long should my resume be if I'm an undergrad applying for internships?,G01,G01 G02,answered,pass,1.0,1.0,1.0
+rerank,I'm a PhD student applying for a machine learning research internship. Can my resume be two pages?,G02,G01 G02,answered,pass,1.0,1.0,1.0
+rerank,How should I structure my answer when an interviewer asks me to describe a time I failed?,G03,G03 G04,answered,pass,1.0,1.0,1.0
+rerank,What SQL topics should I review before a data analyst interview?,G04,G04,answered,pass,1.0,1.0,1.0
+rerank,How do I reach out to an alum for a coffee chat without it being awkward?,G05,G05 G08 G12,answered,pass,1.0,1.0,1.0
+rerank,Is it okay to accept an unpaid internship that only gives academic credit?,G06,G06 G10,answered,pass,1.0,1.0,1.0
+rerank,Can I negotiate pay for an internship at a big company?,G07,G07,answered,pass,1.0,1.0,1.0
+rerank,I'm on an F-1 visa. What's the difference between CPT and OPT for a summer internship?,G10,G10,answered,pass,1.0,1.0,1.0
+rerank,Should I bring printed copies of my resume to the career fair?,G11,G11 G12,answered,pass,1.0,1.0,1.0
+rerank,What should I focus on during my first week at my internship?,G08,G08,answered,pass,1.0,1.0,1.0
+rerank,"My friend says a resume must always be one page, but I'm finishing a master's with two publications. Who's right?",G01 G02,G01 G02,answered,pass,1.0,1.0,1.0
+rerank,"Is the fall recruiting expo on Zoom this year, and do I need paper copies of anything?",G11,G11 G12,routed,fail -> routed to human,1.0,1.0,0.0
+rerank,"A startup offered me $28 an hour and a bigger company offered $32. How should I weigh them, and can I use one offer to negotiate the other?",G06 G07,G07,answered,pass,0.5,1.0,1.0
+rerank,What does E-Verify have to do with staying longer after graduation?,G10,G10,answered,pass,1.0,1.0,1.0
+rerank,Halfway through my summer job my manager gave me feedback. How do I make sure they ask me back full-time?,G13,G13,answered,pass,1.0,1.0,1.0
+hyde,How long should my resume be if I'm an undergrad applying for internships?,G01,G01 G02,answered,pass,1.0,1.0,1.0
+hyde,I'm a PhD student applying for a machine learning research internship. Can my resume be two pages?,G02,G01 G02,answered,pass,1.0,1.0,1.0
+hyde,How should I structure my answer when an interviewer asks me to describe a time I failed?,G03,G03,answered,pass,1.0,1.0,1.0
+hyde,What SQL topics should I review before a data analyst interview?,G04,G04,answered,pass,1.0,1.0,1.0
+hyde,How do I reach out to an alum for a coffee chat without it being awkward?,G05,G05,answered,pass,1.0,1.0,1.0
+hyde,Is it okay to accept an unpaid internship that only gives academic credit?,G06,G06 G13,answered,pass,1.0,1.0,1.0
+hyde,Can I negotiate pay for an internship at a big company?,G07,G07,answered,pass,1.0,1.0,1.0
+hyde,I'm on an F-1 visa. What's the difference between CPT and OPT for a summer internship?,G10,G10,answered,pass,1.0,1.0,1.0
+hyde,Should I bring printed copies of my resume to the career fair?,G11,G01 G02 G14,answered,pass,0.0,1.0,1.0
+hyde,What should I focus on during my first week at my internship?,G08,G08,answered,pass,1.0,1.0,1.0
+hyde,"My friend says a resume must always be one page, but I'm finishing a master's with two publications. Who's right?",G01 G02,G01 G02,answered,pass,1.0,1.0,1.0
+hyde,"Is the fall recruiting expo on Zoom this year, and do I need paper copies of anything?",G11,G11 G12,routed,fail -> routed to human,1.0,1.0,0.0
+hyde,"A startup offered me $28 an hour and a bigger company offered $32. How should I weigh them, and can I use one offer to negotiate the other?",G06 G07,G06 G07,answered,pass,1.0,1.0,1.0
+hyde,What does E-Verify have to do with staying longer after graduation?,G10,G10,answered,pass,1.0,1.0,1.0
+hyde,Halfway through my summer job my manager gave me feedback. How do I make sure they ask me back full-time?,G13,G03 G05 G13,answered,pass,1.0,1.0,1.0
+fusion,How long should my resume be if I'm an undergrad applying for internships?,G01,G01 G02,answered,pass,1.0,1.0,1.0
+fusion,I'm a PhD student applying for a machine learning research internship. Can my resume be two pages?,G02,G01 G02,answered,pass,1.0,1.0,1.0
+fusion,How should I structure my answer when an interviewer asks me to describe a time I failed?,G03,G03,answered,pass,1.0,1.0,1.0
+fusion,What SQL topics should I review before a data analyst interview?,G04,G04 G05,answered,pass,1.0,1.0,1.0
+fusion,How do I reach out to an alum for a coffee chat without it being awkward?,G05,G05 G11,answered,pass,1.0,1.0,1.0
+fusion,Is it okay to accept an unpaid internship that only gives academic credit?,G06,G06 G10,answered,pass,1.0,1.0,1.0
+fusion,Can I negotiate pay for an internship at a big company?,G07,G06 G07,answered,pass,1.0,1.0,1.0
+fusion,I'm on an F-1 visa. What's the difference between CPT and OPT for a summer internship?,G10,G06 G10,answered,pass,1.0,1.0,1.0
+fusion,Should I bring printed copies of my resume to the career fair?,G11,G01 G02,answered,pass,0.0,1.0,1.0
+fusion,What should I focus on during my first week at my internship?,G08,G08,answered,pass,1.0,1.0,1.0
+fusion,"My friend says a resume must always be one page, but I'm finishing a master's with two publications. Who's right?",G01 G02,G01 G02,answered,pass,1.0,1.0,1.0
+fusion,"Is the fall recruiting expo on Zoom this year, and do I need paper copies of anything?",G11,G12,refused,refused,0.0,1.0,0.0
+fusion,"A startup offered me $28 an hour and a bigger company offered $32. How should I weigh them, and can I use one offer to negotiate the other?",G06 G07,G06 G07,answered,pass,1.0,1.0,1.0
+fusion,What does E-Verify have to do with staying longer after graduation?,G10,G02 G10,answered,pass,1.0,1.0,1.0
+fusion,Halfway through my summer job my manager gave me feedback. How do I make sure they ask me back full-time?,G13,G11 G12 G13,answered,pass,1.0,1.0,1.0
+hyde_rerank,How long should my resume be if I'm an undergrad applying for internships?,G01,G01 G02,answered,pass,1.0,1.0,1.0
+hyde_rerank,I'm a PhD student applying for a machine learning research internship. Can my resume be two pages?,G02,G01 G02,answered,pass,1.0,1.0,1.0
+hyde_rerank,How should I structure my answer when an interviewer asks me to describe a time I failed?,G03,G03 G04,answered,pass,1.0,1.0,1.0
+hyde_rerank,What SQL topics should I review before a data analyst interview?,G04,G04,answered,pass,1.0,1.0,1.0
+hyde_rerank,How do I reach out to an alum for a coffee chat without it being awkward?,G05,G05 G08 G12,answered,pass,1.0,1.0,1.0
+hyde_rerank,Is it okay to accept an unpaid internship that only gives academic credit?,G06,G06 G10,answered,pass,1.0,1.0,1.0
+hyde_rerank,Can I negotiate pay for an internship at a big company?,G07,G07,answered,pass,1.0,1.0,1.0
+hyde_rerank,I'm on an F-1 visa. What's the difference between CPT and OPT for a summer internship?,G10,G10,answered,pass,1.0,1.0,1.0
+hyde_rerank,Should I bring printed copies of my resume to the career fair?,G11,G11 G12,answered,pass,1.0,1.0,1.0
+hyde_rerank,What should I focus on during my first week at my internship?,G08,G08,answered,pass,1.0,1.0,1.0
+hyde_rerank,"My friend says a resume must always be one page, but I'm finishing a master's with two publications. Who's right?",G01 G02,G01 G02,answered,pass,1.0,1.0,1.0
+hyde_rerank,"Is the fall recruiting expo on Zoom this year, and do I need paper copies of anything?",G11,G11 G12,routed,fail -> routed to human,1.0,1.0,0.0
+hyde_rerank,"A startup offered me $28 an hour and a bigger company offered $32. How should I weigh them, and can I use one offer to negotiate the other?",G06 G07,G07,answered,pass,0.5,1.0,1.0
+hyde_rerank,What does E-Verify have to do with staying longer after graduation?,G10,G10,answered,pass,1.0,1.0,1.0
+hyde_rerank,Halfway through my summer job my manager gave me feedback. How do I make sure they ask me back full-time?,G13,G13,answered,pass,1.0,1.0,1.0

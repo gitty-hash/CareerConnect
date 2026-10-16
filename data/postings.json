@@ -1,0 +1,841 @@
+[
+  {
+    "posting_id": "P001",
+    "title": "Data Analyst Intern",
+    "company": "Saguaro Analytics",
+    "company_stage": "startup",
+    "category": "Data Analytics",
+    "location": "Remote (US)",
+    "remote": "remote",
+    "paid": true,
+    "pay": "$26/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "SQL",
+      "Python",
+      "pandas",
+      "Tableau",
+      "A/B testing"
+    ],
+    "description": "Saguaro Analytics is a 30-person startup that builds pricing dashboards for independent grocery stores. As a Data Analyst Intern you will join our insights squad and own a weekly report that tells store owners which products are losing margin and why. You will write SQL against our warehouse, clean messy point-of-sale exports in Python with pandas, and build Tableau dashboards that a busy store manager can read in two minutes. Midway through the summer you will design and analyze an A/B test of a new discount recommendation. We value curiosity over credentials, so class projects count as experience. This is a fully remote, paid internship ($26/hour, 12 weeks, 30-40 hours per week) and we ship you a laptop. We welcome international students and support CPT and OPT work authorization for this role. You will have weekly one-on-ones with a senior analyst and finish with a presentation to the founders."
+  },
+  {
+    "posting_id": "P002",
+    "title": "Data Analyst Intern",
+    "company": "Saguaro Analytics",
+    "company_stage": "startup",
+    "category": "Data Analytics",
+    "location": "Tempe, AZ",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$26/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "SQL",
+      "Python",
+      "pandas",
+      "Tableau",
+      "Excel"
+    ],
+    "description": "Saguaro Analytics is a 30-person startup that builds pricing dashboards for independent grocery stores. As a Data Analyst Intern in our Tempe office you will join our insights squad and own a weekly report that tells store owners which products are losing margin and why. You will write SQL against our warehouse, clean point-of-sale exports in Python with pandas, and build Tableau dashboards that a store manager can read in two minutes. You will also visit partner stores around Phoenix to watch how managers actually use the reports, then turn those observations into dashboard improvements. This is an onsite, paid internship ($26/hour, 12 weeks, 40 hours per week) in Tempe, Arizona. Applicants must be authorized to work in the United States without employer sponsorship now or in the future; we cannot support CPT or OPT for this position. You will have weekly one-on-ones with a senior analyst and finish with a presentation to the founders."
+  },
+  {
+    "posting_id": "P003",
+    "title": "Data Engineering Intern",
+    "company": "Nimbus Cloudworks",
+    "company_stage": "mid-size",
+    "category": "Data Analytics",
+    "location": "Seattle, WA",
+    "remote": "hybrid",
+    "paid": true,
+    "pay": "$34/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "PostgreSQL",
+      "Python",
+      "Airflow",
+      "dbt",
+      "SQL"
+    ],
+    "description": "Nimbus Cloudworks runs managed hosting for about four thousand small software companies, and every one of them generates usage events we need to bill accurately. Our data platform team is looking for a Data Engineering Intern to help migrate billing pipelines from nightly scripts to scheduled Airflow DAGs. You will model tables in PostgreSQL, write dbt transformations with tests, and add data-quality checks that alert us before a bad invoice goes out. You should be comfortable writing SQL joins and window functions and reading Python code written by others. Experience with PostgreSQL indexing or query plans is a strong plus, and we will teach you the rest. The role is hybrid, with three days a week in our Seattle office and two at home, paid at $34/hour for twelve weeks. International students are welcome; we support CPT and OPT and have sponsored several former interns for full-time roles."
+  },
+  {
+    "posting_id": "P004",
+    "title": "Business Intelligence Intern",
+    "company": "Quillstone Insurance",
+    "company_stage": "enterprise",
+    "category": "Data Analytics",
+    "location": "Phoenix, AZ",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$22/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "Power BI",
+      "Excel",
+      "SQL",
+      "DAX"
+    ],
+    "description": "Quillstone Insurance serves more than two million auto and home policyholders across the Southwest. Our Business Intelligence team supports claims leaders who need to know, every Monday morning, where claim volumes are spiking and which adjusters are overloaded. As a BI Intern you will maintain Power BI reports, write DAX measures for claim cycle time, and pull data with SQL from our claims data mart. You will also interview two claims managers to learn which numbers they ignore and redesign one report around what they actually need. Strong Excel skills are required, and familiarity with Power BI or any visualization tool is preferred. This is an onsite internship at our Phoenix headquarters, paid at $22/hour, running ten weeks from early June. Applicants must be currently authorized to work in the U.S.; we do not offer visa sponsorship for this program. Interns join a cohort of thirty and attend weekly leadership talks."
+  },
+  {
+    "posting_id": "P005",
+    "title": "Sports Performance Data Intern",
+    "company": "Kinetic Sports Analytics",
+    "company_stage": "startup",
+    "category": "Data Analytics",
+    "location": "Remote (US)",
+    "remote": "remote",
+    "paid": false,
+    "pay": "Unpaid (academic credit)",
+    "visa_sponsorship": true,
+    "skills": [
+      "Python",
+      "R",
+      "statistics",
+      "data visualization"
+    ],
+    "description": "Kinetic Sports Analytics is an early-stage startup that turns wearable sensor data into training recommendations for college track and soccer programs. Our interns analyze sprint, heart-rate, and recovery data to spot athletes who are trending toward overtraining. You will clean sensor exports in Python or R, build simple statistical models that compare an athlete to their own baseline, and design charts that coaches can read on a phone between sessions. You will present one finding to a partner coaching staff at the end of the term. This internship is fully remote and unpaid; it is structured for academic credit, and we will work with your department on the required paperwork. International students are welcome and we will provide the documentation your school needs for CPT. Expect about fifteen hours per week, flexible around classes, with a weekly video check-in with our head of data science."
+  },
+  {
+    "posting_id": "P006",
+    "title": "Data Science Intern - Demand Forecasting",
+    "company": "Desert Bloom Foods",
+    "company_stage": "enterprise",
+    "category": "Data Analytics",
+    "location": "Phoenix, AZ",
+    "remote": "hybrid",
+    "paid": true,
+    "pay": "$28/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "Python",
+      "time series forecasting",
+      "scikit-learn",
+      "SQL"
+    ],
+    "description": "Desert Bloom Foods distributes fresh produce to more than nine hundred restaurants and grocery stores. Every unsold crate of strawberries is money and food thrown away, so forecasting demand accurately matters to our margins and our sustainability goals. As a Data Science Intern you will build time series forecasting models for perishable products, compare them against our current moving-average approach, and explain the accuracy gains in dollars and pounds of waste avoided. You will use Python, scikit-learn, and SQL, and you will learn how forecasts feed real purchasing decisions. Coursework in statistics or machine learning is required; prior internship experience is not. The internship is hybrid, with two days a week at our Phoenix distribution center, and pays $28/hour over twelve weeks. We welcome international students and support CPT and OPT authorization for this position."
+  },
+  {
+    "posting_id": "P007",
+    "title": "Care Access Insights Intern",
+    "company": "Copperline Health",
+    "company_stage": "mid-size",
+    "category": "Data Analytics",
+    "location": "Mesa, AZ",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$21/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "Excel",
+      "SQL",
+      "statistics",
+      "Tableau"
+    ],
+    "description": "Copperline Health operates fourteen community clinics across the East Valley. Each year thousands of booked visits go unused when people do not show up, which leaves exam rooms empty while others wait weeks for a slot. As our Care Access Insights Intern you will dig into scheduling records to find which factors predict no-shows, such as booking lead time, reminder texts, transit distance, and visit type. You will test whether a second reminder message changes attendance, quantify the effect, and recommend scheduling changes to our clinic directors. You will work with de-identified records and complete privacy training on day one. Tools include Excel, SQL, basic statistics, and Tableau. The internship is onsite at our Mesa administrative office, paid at $21/hour, ten weeks long. Applicants must be authorized to work in the United States without sponsorship. Students in public health, statistics, business analytics, or related majors are encouraged to apply."
+  },
+  {
+    "posting_id": "P008",
+    "title": "Frontend Software Engineering Intern",
+    "company": "Fieldnote",
+    "company_stage": "startup",
+    "category": "Software Engineering",
+    "location": "Remote (US)",
+    "remote": "remote",
+    "paid": true,
+    "pay": "$35/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "React",
+      "TypeScript",
+      "CSS",
+      "Git"
+    ],
+    "description": "Fieldnote is a seed-stage startup building a note-taking app for field researchers such as ecologists, archaeologists, and geologists who work offline for days at a time. As a Frontend Software Engineering Intern you will ship real features to our React and TypeScript web app, including offline sync indicators and a new photo-annotation tool. You will open pull requests on day three, receive code review from senior engineers, and pair-program with our design team twice a week. We care more about how you reason through a problem than about which frameworks you list, but you should have built at least one web project with JavaScript or TypeScript and be comfortable with Git. The internship is fully remote across U.S. time zones, pays $35/hour, and runs twelve weeks with a flexible start date. International students are welcome; we support CPT and OPT work authorization and cover your home internet stipend."
+  },
+  {
+    "posting_id": "P009",
+    "title": "Backend Engineering Intern",
+    "company": "Juniper Fintech",
+    "company_stage": "startup",
+    "category": "Software Engineering",
+    "location": "New York, NY",
+    "remote": "hybrid",
+    "paid": true,
+    "pay": "$45/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "REST APIs",
+      "SQL"
+    ],
+    "description": "Juniper Fintech builds savings accounts for gig workers whose income arrives in irregular bursts. Our backend moves real money, so we care about correctness, testing, and clear code. As a Backend Engineering Intern you will build REST APIs in Java with Spring Boot, write integration tests against a sandboxed payment network, and help design a feature that automatically sets aside a percentage of each deposit for taxes. You will participate in design reviews and on-call shadowing to see how production incidents are handled. You should know one object-oriented language well and understand basic SQL. The internship is hybrid in our Manhattan office three days a week, pays $45/hour, and includes a housing stipend for students relocating to New York. International students are welcome and we support CPT and OPT; several of our full-time engineers started as interns on OPT."
+  },
+  {
+    "posting_id": "P010",
+    "title": "Mobile Developer Intern",
+    "company": "Brightpath Learning",
+    "company_stage": "startup",
+    "category": "Software Engineering",
+    "location": "Austin, TX",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$30/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "Swift",
+      "Kotlin",
+      "Firebase",
+      "mobile development"
+    ],
+    "description": "Brightpath Learning makes a reading-practice app used by forty thousand elementary school students. Kids read aloud, and the app gives gentle feedback on fluency. As a Mobile Developer Intern you will work on our iOS app in Swift or our Android app in Kotlin, depending on your experience, and help build a parent dashboard backed by Firebase. You will join sprint planning, write unit tests, and watch at least one classroom session to see how children actually use the product. Prior mobile coursework or a published personal app is preferred. This is an onsite internship in our Austin, Texas studio, paid at $30/hour for eleven weeks, with lunch provided daily. Because of our current hiring capacity, applicants must be authorized to work in the U.S. without sponsorship, and we cannot support CPT or OPT this cycle."
+  },
+  {
+    "posting_id": "P011",
+    "title": "Cloud Infrastructure Intern",
+    "company": "Nimbus Cloudworks",
+    "company_stage": "mid-size",
+    "category": "Software Engineering",
+    "location": "Seattle, WA",
+    "remote": "hybrid",
+    "paid": true,
+    "pay": "$38/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "Kubernetes",
+      "Docker",
+      "Terraform",
+      "Linux",
+      "Go"
+    ],
+    "description": "Nimbus Cloudworks hosts applications for thousands of small software companies on a fleet of Kubernetes clusters. Our infrastructure team keeps that fleet reliable, cheap, and secure. As a Cloud Infrastructure Intern you will write Terraform modules, improve our Docker image build pipeline, and build a small Go service that reports which Kubernetes workloads are over-provisioned so customers can save money. You will join the on-call rotation as a shadow and write one postmortem. Familiarity with Linux command-line tools is required; experience with containers or any cloud provider is a plus. The internship is hybrid in Seattle, three office days per week, paid at $38/hour for twelve weeks, with relocation assistance. International students are welcome and we support CPT and OPT authorization. Past interns have built tools that now run in production for every customer."
+  },
+  {
+    "posting_id": "P012",
+    "title": "Full-Stack Developer Intern",
+    "company": "Bluebird Nonprofit Alliance",
+    "company_stage": "nonprofit",
+    "category": "Software Engineering",
+    "location": "Remote (US)",
+    "remote": "remote",
+    "paid": true,
+    "pay": "$20/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "JavaScript"
+    ],
+    "description": "Bluebird Nonprofit Alliance connects food banks with volunteer drivers who deliver groceries to homebound seniors. Our small tech team maintains the scheduling platform that matches drivers to routes each morning. As a Full-Stack Developer Intern you will fix bugs and build features in our Python and Django application, write PostgreSQL migrations, and improve the JavaScript driver check-in page that volunteers use on their phones. You will talk directly with food-bank coordinators to understand their problems before writing code. You should have completed a web development or databases course and be comfortable learning a new codebase. This internship is fully remote, part-time at 20 hours per week, and paid at $20/hour for the summer. Applicants must be authorized to work in the U.S. without sponsorship because our grant funding does not allow us to support visa paperwork."
+  },
+  {
+    "posting_id": "P013",
+    "title": "Game Developer Intern",
+    "company": "Cobalt Games",
+    "company_stage": "mid-size",
+    "category": "Software Engineering",
+    "location": "Los Angeles, CA",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$32/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "C++",
+      "Unity",
+      "C#",
+      "game physics"
+    ],
+    "description": "Cobalt Games is an independent studio of sixty people making a cooperative survival game for PC and consoles. As a Game Developer Intern you will join the gameplay team and implement a new crafting system in Unity with C#, profile performance on console hardware, and fix physics bugs reported by our playtesters. Engineers with C++ experience may instead work on our custom networking layer. You will attend weekly playtests and present your feature at the studio-wide demo day. A portfolio with at least one playable project, such as a game jam entry or a class project, is required. The internship is onsite at our Los Angeles studio, paid at $32/hour for twelve weeks, and includes a relocation stipend. We welcome international students and support CPT and OPT; we have also sponsored H-1B visas for full-time hires."
+  },
+  {
+    "posting_id": "P014",
+    "title": "Machine Learning Engineering Intern",
+    "company": "Redrock Robotics",
+    "company_stage": "mid-size",
+    "category": "Software Engineering",
+    "location": "Phoenix, AZ",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$40/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "Python",
+      "PyTorch",
+      "computer vision",
+      "ROS"
+    ],
+    "description": "Redrock Robotics builds autonomous carts that move parts around large manufacturing floors. The carts rely on cameras to detect pallets, people, and obstacles. As a Machine Learning Engineering Intern you will improve our pallet-detection model in PyTorch, build an evaluation set from hard real-world images such as glare and dust, and help deploy the model to cart hardware using ROS. You will spend at least one day a week on the factory floor watching the carts and collecting failure cases. Coursework in machine learning or computer vision is required, and you should be fluent in Python. The internship is onsite in Phoenix, paid at $40/hour over twelve weeks, and closed-toe shoes are mandatory on the floor. International students are welcome; we support CPT and OPT authorization and have a STEM OPT pathway for full-time roles."
+  },
+  {
+    "posting_id": "P015",
+    "title": "Product Management Intern",
+    "company": "Fieldnote",
+    "company_stage": "startup",
+    "category": "Product Management",
+    "location": "Remote (US)",
+    "remote": "remote",
+    "paid": true,
+    "pay": "$30/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "user research",
+      "roadmapping",
+      "Jira",
+      "SQL"
+    ],
+    "description": "Fieldnote is a seed-stage startup building a note-taking app for researchers who work in remote locations without reliable internet. As our Product Management Intern you will own one problem end to end: why new users abandon the app during their first field trip. You will interview at least ten researchers, analyze onboarding funnels with simple SQL queries, write a one-page product spec, and work with engineers in Jira to ship an improvement before the summer ends. You will present results, including what did not work, to the whole company. We look for clear writing, structured thinking, and genuine curiosity about users; technical background is welcome but not required. The internship is fully remote, paid at $30/hour, twelve weeks long. International students are welcome and we support CPT and OPT authorization."
+  },
+  {
+    "posting_id": "P016",
+    "title": "Associate Product Manager Intern",
+    "company": "Orchid Pay",
+    "company_stage": "mid-size",
+    "category": "Product Management",
+    "location": "San Francisco, CA",
+    "remote": "hybrid",
+    "paid": true,
+    "pay": "$42/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "product specs",
+      "A/B testing",
+      "SQL",
+      "stakeholder communication"
+    ],
+    "description": "Orchid Pay provides checkout and payment tools for two hundred thousand small online merchants. Our Associate Product Manager internship places you on the checkout team, where a one-percent improvement in conversion is worth millions of dollars to our merchants. You will write product requirement documents, define success metrics, run an A/B test on a redesigned payment form, and coordinate with engineering, design, legal, and support to launch it. You will learn to say no to good ideas so the team can focus on great ones. Strong communication and comfort with data are essential; basic SQL is preferred. The role is hybrid in San Francisco, two days per week in office, paid at $42/hour for twelve weeks. Applicants must be authorized to work in the U.S. without sponsorship for this program."
+  },
+  {
+    "posting_id": "P017",
+    "title": "Product Analyst Intern",
+    "company": "Atlas Outfitters",
+    "company_stage": "enterprise",
+    "category": "Product Management",
+    "location": "Denver, CO",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$27/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "SQL",
+      "Looker",
+      "experimentation",
+      "Excel"
+    ],
+    "description": "Atlas Outfitters sells hiking, camping, and climbing gear online and in eighty stores. Our digital product team decides what shoppers see on the website and app, and every decision is backed by data. As a Product Analyst Intern you will measure how a new size-recommendation feature affects returns, build Looker dashboards for product managers, and help design experiments with proper sample sizes. You will write SQL every day and learn how analysis turns into product decisions. Strong Excel skills and at least one statistics course are required. The internship is onsite at our Denver headquarters, paid at $27/hour for ten weeks, with a generous gear discount. We welcome international students and support CPT and OPT authorization for this role. Past interns have presented their findings directly to the vice president of digital."
+  },
+  {
+    "posting_id": "P018",
+    "title": "Technical Program Manager Intern",
+    "company": "Vantage Orbit",
+    "company_stage": "enterprise",
+    "category": "Product Management",
+    "location": "Huntsville, AL",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$33/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "scheduling",
+      "risk tracking",
+      "Microsoft Project",
+      "communication"
+    ],
+    "description": "Vantage Orbit designs and manufactures small satellites for weather and communications customers. Our program management office keeps hardware, software, and test teams aligned on schedules that cannot slip because launch windows do not move. As a Technical Program Manager Intern you will maintain integrated schedules in Microsoft Project, run weekly risk reviews, track action items across five engineering teams, and prepare status briefings for program leadership. Engineering or business students who enjoy organizing complex work are a good fit. Because this program involves technology controlled under U.S. export regulations (ITAR), applicants must be U.S. citizens or lawful permanent residents; this is a legal requirement of the work, not a company preference. The internship is onsite in Huntsville, Alabama, paid at $33/hour for twelve weeks, with housing assistance."
+  },
+  {
+    "posting_id": "P019",
+    "title": "Product Operations Intern",
+    "company": "Brightpath Learning",
+    "company_stage": "startup",
+    "category": "Product Management",
+    "location": "Remote (US)",
+    "remote": "remote",
+    "paid": false,
+    "pay": "Unpaid (academic credit)",
+    "visa_sponsorship": true,
+    "skills": [
+      "Notion",
+      "process documentation",
+      "customer feedback analysis"
+    ],
+    "description": "Brightpath Learning makes a reading-practice app for elementary schools. Teachers send us hundreds of feedback messages every week, and right now nobody has time to organize them. As a Product Operations Intern you will build a system in Notion that tags and summarizes teacher feedback, write a weekly digest for the product team, and document our release process so new hires can follow it. You will learn how product teams prioritize and how operations work keeps a startup from drowning in its own requests. This internship is remote and unpaid, structured for academic credit with a faculty sponsor at your university, about twelve hours per week during the semester. International students are welcome and we will provide the documentation your school needs for CPT approval."
+  },
+  {
+    "posting_id": "P020",
+    "title": "Digital Marketing Intern",
+    "company": "Harbor & Finch",
+    "company_stage": "agency",
+    "category": "Marketing",
+    "location": "Chicago, IL",
+    "remote": "hybrid",
+    "paid": true,
+    "pay": "$20/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "SEO",
+      "Google Analytics",
+      "content writing",
+      "social media"
+    ],
+    "description": "Harbor & Finch is a boutique marketing agency serving restaurants, breweries, and local retailers in the Midwest. As a Digital Marketing Intern you will support three client accounts at once: auditing their websites for SEO problems, drafting blog and social media content, and building monthly Google Analytics reports that explain results in plain language to business owners. You will sit in on client calls and learn how agencies scope work and manage expectations. Strong writing is the most important skill for this role; please include a writing sample with your application. The internship is hybrid in our Chicago office two days a week, paid at $20/hour for ten weeks. Applicants must be authorized to work in the U.S. without sponsorship, as we are not able to support visa paperwork at this time."
+  },
+  {
+    "posting_id": "P021",
+    "title": "Social Media Marketing Intern",
+    "company": "Desert Bloom Foods",
+    "company_stage": "enterprise",
+    "category": "Marketing",
+    "location": "Phoenix, AZ",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$18/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "Instagram",
+      "TikTok",
+      "Canva",
+      "copywriting"
+    ],
+    "description": "Join our brand team and help tell the story behind the food. As a Social Media Marketing Intern you will plan and publish content for our Instagram and TikTok accounts, film short behind-the-scenes videos at farms and in our kitchens, design graphics in Canva, and write captions that sound like a friend rather than an advertisement. You will track engagement every week and recommend what to post more of and what to stop. You will also help run one community campaign that highlights a local grower. Bring a portfolio or a personal account that shows your creative voice. This internship is onsite at the Desert Bloom Foods headquarters in Phoenix, paid at $18/hour, ten weeks, with occasional early mornings for farm shoots. Applicants must be authorized to work in the U.S. without sponsorship."
+  },
+  {
+    "posting_id": "P022",
+    "title": "Social Media Marketing Intern",
+    "company": "Atlas Outfitters",
+    "company_stage": "enterprise",
+    "category": "Marketing",
+    "location": "Remote (US)",
+    "remote": "remote",
+    "paid": false,
+    "pay": "Unpaid (academic credit)",
+    "visa_sponsorship": true,
+    "skills": [
+      "Instagram",
+      "TikTok",
+      "Canva",
+      "copywriting"
+    ],
+    "description": "Join our brand team and help tell the story behind the gear. As a Social Media Marketing Intern you will plan and publish content for our Instagram and TikTok accounts, edit short videos from our athlete ambassadors on the trail, design graphics in Canva, and write captions that sound like a friend rather than an advertisement. You will track engagement every week and recommend what to post more of and what to stop. You will also help run one community campaign that highlights a trail-cleanup volunteer group. Bring a portfolio or a personal account that shows your creative voice. This internship is remote and unpaid; it is offered for academic credit only, about fifteen hours per week. International students are welcome and we will provide the documentation needed for CPT approval."
+  },
+  {
+    "posting_id": "P023",
+    "title": "Content Marketing Intern",
+    "company": "Brightpath Learning",
+    "company_stage": "startup",
+    "category": "Marketing",
+    "location": "Remote (US)",
+    "remote": "remote",
+    "paid": true,
+    "pay": "$22/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "writing",
+      "SEO",
+      "WordPress",
+      "email marketing"
+    ],
+    "description": "Brightpath Learning sells a reading-practice app to school districts, and our buyers are principals and literacy coordinators who read a lot before they buy. As a Content Marketing Intern you will write articles for our WordPress blog about early literacy research, turn teacher success stories into case studies, and draft a monthly email newsletter that goes to twelve thousand educators. You will learn SEO keyword research and how to measure whether content actually leads to product demos. Excellent writing and editing are required; experience in education is a plus. The internship is fully remote, paid at $22/hour, twenty-five hours per week for twelve weeks. International students are welcome and we support CPT and OPT work authorization. You will also interview two teachers each month to collect stories for new case studies."
+  },
+  {
+    "posting_id": "P024",
+    "title": "Marketing Analytics Intern",
+    "company": "Kinetic Sports Analytics",
+    "company_stage": "startup",
+    "category": "Marketing",
+    "location": "Scottsdale, AZ",
+    "remote": "hybrid",
+    "paid": true,
+    "pay": "$24/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "Google Analytics",
+      "SQL",
+      "marketing attribution",
+      "Excel"
+    ],
+    "description": "Kinetic Sports Analytics sells athlete-monitoring software to college athletic departments, and our marketing team needs to know which channels actually produce customers. As a Marketing Analytics Intern you will connect conference sponsorships, webinars, and paid ads to the deals they influenced, build a simple multi-touch attribution model in Excel or SQL, and recommend where next year's budget should go. You will learn Google Analytics, our CRM, and how marketing and sales teams argue about credit. Comfort with numbers and spreadsheets is required; SQL is a plus. The internship is hybrid in Scottsdale, two office days per week, paid at $24/hour for ten weeks. International students are welcome and we support CPT and OPT authorization. By the end of the summer you will present a channel-by-channel budget recommendation to our chief marketing officer."
+  },
+  {
+    "posting_id": "P025",
+    "title": "UX Design Intern",
+    "company": "Fieldnote",
+    "company_stage": "startup",
+    "category": "UX/UI Design",
+    "location": "Remote (US)",
+    "remote": "remote",
+    "paid": true,
+    "pay": "$30/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "Figma",
+      "prototyping",
+      "user interviews",
+      "usability testing"
+    ],
+    "description": "Fieldnote builds a note-taking app for field researchers who record observations in harsh conditions: gloves on, bright sun, spotty signal. As a UX Design Intern you will redesign our photo-annotation flow so it works one-handed outdoors. You will run user interviews with researchers, build clickable prototypes in Figma, and conduct usability testing sessions over video and, if possible, in a real field setting. Your designs will ship before the summer ends. A portfolio with at least two projects that show your process, not just final screens, is required. The internship is fully remote, paid at $30/hour for twelve weeks, with a stipend for one field visit. International students are welcome and we support CPT and OPT work authorization. You will also contribute to our small design system and learn how designers and engineers hand off work."
+  },
+  {
+    "posting_id": "P026",
+    "title": "UX Research Intern",
+    "company": "Quillstone Insurance",
+    "company_stage": "enterprise",
+    "category": "UX/UI Design",
+    "location": "Phoenix, AZ",
+    "remote": "hybrid",
+    "paid": true,
+    "pay": "$25/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "user interviews",
+      "surveys",
+      "journey mapping",
+      "qualitative analysis"
+    ],
+    "description": "Filing an insurance claim usually happens on someone's worst day. Quillstone Insurance wants that experience to feel calm and clear. As a UX Research Intern you will interview policyholders who recently filed claims, design and analyze a survey of five thousand customers, and build a journey map that shows exactly where people get confused or anxious. You will present findings to the claims and digital product teams and help decide what gets fixed first. Coursework in human-computer interaction, psychology, or research methods is preferred. The internship is hybrid at our Phoenix headquarters, three days in office, paid at $25/hour for ten weeks. Applicants must be authorized to work in the U.S.; visa sponsorship is not available for this program. You will also learn how to recruit research participants ethically and protect their privacy."
+  },
+  {
+    "posting_id": "P027",
+    "title": "Accessibility Design Intern",
+    "company": "Sonoran Water Authority",
+    "company_stage": "public",
+    "category": "UX/UI Design",
+    "location": "Tucson, AZ",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$21/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "WCAG",
+      "screen readers",
+      "accessibility audits",
+      "HTML"
+    ],
+    "description": "Sonoran Water Authority serves six hundred thousand residents, and every one of them deserves to pay a bill or report a leak online without assistance. Residents who rely on screen readers or have low vision currently struggle with our bill-pay portal. As our Accessibility Design Intern you will audit our online portal against WCAG 2.2 guidelines, test every page with NVDA and VoiceOver, and recommend fixes for color contrast, keyboard navigation, and form labels. You will meet with residents with visual impairments to observe their experience firsthand and turn what you learn into a prioritized fix list for our vendor. Basic HTML knowledge is required. This is an onsite public-sector internship in Tucson, paid at $21/hour for ten weeks. Applicants must be authorized to work in the U.S. without sponsorship."
+  },
+  {
+    "posting_id": "P028",
+    "title": "Product Design Intern",
+    "company": "Orchid Pay",
+    "company_stage": "mid-size",
+    "category": "UX/UI Design",
+    "location": "San Francisco, CA",
+    "remote": "hybrid",
+    "paid": true,
+    "pay": "$40/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "Figma",
+      "design systems",
+      "interaction design",
+      "prototyping"
+    ],
+    "description": "Orchid Pay builds checkout tools for small online merchants. Our design team is small, opinionated, and obsessed with details that make payment feel trustworthy. As a Product Design Intern you will design new components for our design system in Figma, prototype interaction details such as error states and loading animations, and partner with an engineer to ship a redesigned refund flow for merchants. You will receive two design critiques per week from senior designers. A portfolio demonstrating interaction design and visual craft is required. The internship is hybrid in San Francisco, two days per week in office, paid at $40/hour for twelve weeks. International students are welcome and we support CPT and OPT work authorization for this role. You will also run one round of usability testing with real merchants before your redesign ships."
+  },
+  {
+    "posting_id": "P029",
+    "title": "Product Design Intern (Part-Time, Spring)",
+    "company": "Orchid Pay",
+    "company_stage": "mid-size",
+    "category": "UX/UI Design",
+    "location": "San Francisco, CA",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$40/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "Figma",
+      "design systems",
+      "visual design",
+      "prototyping"
+    ],
+    "description": "Orchid Pay builds checkout tools for small online merchants. Our design team is small, opinionated, and obsessed with details that make payment feel trustworthy. As a part-time Product Design Intern during the spring semester you will design new components for our design system in Figma, polish visual details across our merchant dashboard, and prototype improvements to how merchants view their payouts. You will receive weekly design critiques from senior designers. A portfolio demonstrating visual craft is required. This part-time role is onsite in our San Francisco office, twenty hours per week from January through April, paid at $40/hour. Applicants for this spring program must be authorized to work in the U.S. without sponsorship. You will also contribute documentation that helps engineers use the design system consistently."
+  },
+  {
+    "posting_id": "P030",
+    "title": "Financial Analyst Intern",
+    "company": "Mesa Ridge Bank",
+    "company_stage": "enterprise",
+    "category": "Finance",
+    "location": "Phoenix, AZ",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$25/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "Excel",
+      "financial modeling",
+      "PowerPoint",
+      "accounting"
+    ],
+    "description": "Mesa Ridge Bank is a regional bank with ninety branches across Arizona and New Mexico. Our corporate finance team analyzes branch profitability and helps leadership decide where to open, renovate, or consolidate locations. As a Financial Analyst Intern you will build Excel models that estimate the profitability of each branch, prepare PowerPoint summaries for the executive committee, and analyze one proposed new branch location from start to finish. Coursework in accounting and corporate finance is required, and strong Excel skills are essential. The internship is onsite at our downtown Phoenix office, paid at $25/hour for ten weeks, and top performers receive full-time offers into our analyst rotation program. Applicants must be authorized to work in the U.S. without sponsorship. You will also shadow a branch manager for one day to understand how branch decisions affect customers."
+  },
+  {
+    "posting_id": "P031",
+    "title": "Investment Banking Summer Analyst",
+    "company": "Summit Ridge Capital",
+    "company_stage": "mid-size",
+    "category": "Finance",
+    "location": "New York, NY",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$50/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "valuation",
+      "DCF modeling",
+      "Excel",
+      "PowerPoint"
+    ],
+    "description": "Summit Ridge Capital is a middle-market investment bank advising founder-owned companies on sales and acquisitions. As a Summer Analyst you will build discounted cash flow and comparable-company valuation models, research potential buyers, and help prepare pitch books and confidential information memoranda for live deals. The hours are demanding during deal sprints, and we are honest about that up front; in exchange you receive direct exposure to senior bankers and real transactions. Coursework in finance and accounting is required, and you should be comfortable with Excel shortcuts and PowerPoint formatting. The internship is onsite in our Midtown Manhattan office, paid at $50/hour for ten weeks. International students are welcome; we support CPT and OPT and sponsor visas for full-time analysts. You will also attend weekly training sessions on accounting, valuation, and financial modeling best practices."
+  },
+  {
+    "posting_id": "P032",
+    "title": "Fraud Analytics Intern",
+    "company": "Orchid Pay",
+    "company_stage": "mid-size",
+    "category": "Finance",
+    "location": "Remote (US)",
+    "remote": "remote",
+    "paid": true,
+    "pay": "$32/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "SQL",
+      "Python",
+      "anomaly detection",
+      "statistics"
+    ],
+    "description": "Every day criminals try to use stolen cards at Orchid Pay merchants. Our risk team blocks fraud while letting honest customers check out without friction, and the balance between the two is a constant tradeoff. As a Fraud Analytics Intern you will analyze transaction patterns in SQL and Python, evaluate a new anomaly detection rule against historical chargebacks, and estimate how many legitimate customers each rule would wrongly block. You will present a recommendation with its dollar impact to the head of risk. At least one statistics course and comfort with SQL are required. The internship is fully remote, paid at $32/hour for twelve weeks. International students are welcome and we support CPT and OPT authorization. You will also learn how false positives frustrate honest shoppers and cost merchants real revenue."
+  },
+  {
+    "posting_id": "P033",
+    "title": "FP&A Intern",
+    "company": "Tidewater Energy",
+    "company_stage": "enterprise",
+    "category": "Finance",
+    "location": "Houston, TX",
+    "remote": "hybrid",
+    "paid": true,
+    "pay": "$26/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "budgeting",
+      "forecasting",
+      "Excel",
+      "SAP"
+    ],
+    "description": "Tidewater Energy is building solar and battery storage projects across Texas and the Gulf Coast. Our Financial Planning and Analysis team tracks the budget for each project and forecasts cash needs months ahead. As an FP&A Intern you will update monthly budget-versus-actual reports, investigate variances with project managers, and help build the forecasting model for next year's capital plan. You will pull data from SAP and spend most of your time in Excel. Accounting or finance coursework is required. The internship is hybrid in Houston, three days a week in office, paid at $26/hour for ten weeks. Applicants must be authorized to work in the U.S. without employer sponsorship. You will also join monthly close meetings with the controller's team and learn how capital projects are approved."
+  },
+  {
+    "posting_id": "P034",
+    "title": "Credit Risk Analyst Intern",
+    "company": "Juniper Fintech",
+    "company_stage": "startup",
+    "category": "Finance",
+    "location": "Remote (US)",
+    "remote": "remote",
+    "paid": true,
+    "pay": "$30/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "credit risk",
+      "Python",
+      "SQL",
+      "regulatory reporting"
+    ],
+    "description": "Juniper Fintech offers small, short-term advances to gig workers whose income arrives unpredictably. Deciding who gets an advance, and how much, is both a business problem and a fairness problem. As a Credit Risk Analyst Intern you will analyze repayment data in Python and SQL, test whether our approval rules treat similar applicants consistently, and help prepare the quarterly regulatory reporting package. You will learn how lending regulations shape what data a model may and may not use. Statistics coursework is required; finance or economics majors are encouraged to apply. The internship is fully remote, paid at $30/hour for twelve weeks. International students are welcome and we support CPT and OPT authorization. You will also document your analysis clearly enough that a regulator or auditor could follow every step."
+  },
+  {
+    "posting_id": "P035",
+    "title": "Security Operations Center (SOC) Intern",
+    "company": "Kestrel Security",
+    "company_stage": "mid-size",
+    "category": "Cybersecurity",
+    "location": "Phoenix, AZ",
+    "remote": "hybrid",
+    "paid": true,
+    "pay": "$27/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "SIEM",
+      "Splunk",
+      "incident response",
+      "networking"
+    ],
+    "description": "Kestrel Security monitors networks for two hundred hospitals, schools, and city governments around the clock. As a SOC Intern you will triage alerts in Splunk alongside senior analysts, investigate suspicious logins and phishing reports, and write clear incident tickets that a customer's IT team can act on. Halfway through the summer you will tune one noisy detection rule and measure how many false alarms it removes. You should understand networking basics such as TCP/IP, DNS, and ports; a Security+ certification or coursework is a plus. The internship is hybrid in Phoenix, with some evening shifts, paid at $27/hour for twelve weeks. Applicants must be authorized to work in the U.S. without sponsorship due to customer contract requirements. You will also learn how analysts hand off incidents between shifts so nothing falls through the cracks."
+  },
+  {
+    "posting_id": "P036",
+    "title": "Cloud Security Intern",
+    "company": "Nimbus Cloudworks",
+    "company_stage": "mid-size",
+    "category": "Cybersecurity",
+    "location": "Remote (US)",
+    "remote": "remote",
+    "paid": true,
+    "pay": "$36/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "AWS IAM",
+      "Kubernetes",
+      "Python",
+      "threat modeling"
+    ],
+    "description": "Nimbus Cloudworks hosts thousands of customer applications, and our security team makes sure one customer can never see another customer's data. As a Cloud Security Intern you will review AWS IAM policies for overly broad permissions, write Python scripts that scan our Kubernetes clusters for risky configurations, and contribute to a threat model for a new customer-facing feature. You will learn how security reviews work at a company that ships code dozens of times per day. Programming experience in Python and an interest in cloud systems are required. The internship is fully remote, paid at $36/hour for twelve weeks. International students are welcome and we support CPT and OPT authorization. You will also present your findings to the security team and track each fix through to completion."
+  },
+  {
+    "posting_id": "P037",
+    "title": "Penetration Testing Intern",
+    "company": "Kestrel Security",
+    "company_stage": "mid-size",
+    "category": "Cybersecurity",
+    "location": "Phoenix, AZ",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$28/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "Kali Linux",
+      "Burp Suite",
+      "OWASP Top 10",
+      "report writing"
+    ],
+    "description": "Kestrel Security's red team breaks into customer systems, with permission, before real attackers do. As a Penetration Testing Intern you will assist on web application assessments using Burp Suite, practice exploitation in our internal lab built on Kali Linux, and write findings that explain each vulnerability, its business risk, and how to fix it. You will learn that the report matters as much as the hack. Familiarity with the OWASP Top 10 and experience with capture-the-flag competitions are strongly preferred. The internship is onsite in Phoenix, paid at $28/hour for twelve weeks, and requires passing a background check. Applicants must be authorized to work in the U.S. without sponsorship due to customer contract requirements. You will also learn the legal and ethical rules that separate authorized testing from criminal hacking."
+  },
+  {
+    "posting_id": "P038",
+    "title": "Governance, Risk & Compliance (GRC) Intern",
+    "company": "Quillstone Insurance",
+    "company_stage": "enterprise",
+    "category": "Cybersecurity",
+    "location": "Phoenix, AZ",
+    "remote": "hybrid",
+    "paid": true,
+    "pay": "$23/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "NIST CSF",
+      "policy writing",
+      "risk assessment",
+      "vendor review"
+    ],
+    "description": "Quillstone Insurance holds sensitive personal and financial data for millions of policyholders, and regulators expect us to prove that it is protected. As a GRC Intern you will map our security controls to the NIST Cybersecurity Framework, help assess the security of new software vendors, and rewrite two outdated security policies in language employees will actually read. This role suits students who like cybersecurity but prefer writing, analysis, and business conversations over hands-on hacking. Coursework in information systems or cybersecurity is preferred. The internship is hybrid at our Phoenix headquarters, paid at $23/hour for ten weeks. International students are welcome and we support CPT and OPT authorization for this role. You will also sit in on an internal audit meeting and learn how evidence is collected and reviewed."
+  },
+  {
+    "posting_id": "P039",
+    "title": "Cybersecurity Intern - Satellite Ground Systems",
+    "company": "Vantage Orbit",
+    "company_stage": "enterprise",
+    "category": "Cybersecurity",
+    "location": "Huntsville, AL",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$30/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "network security",
+      "Linux",
+      "vulnerability scanning",
+      "STIGs"
+    ],
+    "description": "Vantage Orbit operates ground stations that command and receive data from our satellites. As a Cybersecurity Intern on the ground systems team you will run vulnerability scans, help harden Linux servers against Defense Information Systems Agency STIG checklists, and document network segmentation for an upcoming customer audit. You will work inside a secure facility and learn how security works when the systems you protect are in orbit. Because this work involves export-controlled technology and may require a security clearance, applicants must be U.S. citizens; this restriction is required by law and government contract. The internship is onsite in Huntsville, Alabama, paid at $30/hour for twelve weeks, with housing assistance available. You will also learn how security teams coordinate with mission operators during satellite passes."
+  },
+  {
+    "posting_id": "P040",
+    "title": "Supply Chain Analyst Intern",
+    "company": "Lumen Freight",
+    "company_stage": "mid-size",
+    "category": "Operations & Supply Chain",
+    "location": "Dallas, TX",
+    "remote": "hybrid",
+    "paid": true,
+    "pay": "$24/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "Excel",
+      "SQL",
+      "inventory planning",
+      "Tableau"
+    ],
+    "description": "Lumen Freight manages warehousing and shipping for consumer brands that sell online. When a product goes viral, our customers either run out of stock or drown in returns. As a Supply Chain Analyst Intern you will analyze inventory levels across six warehouses, build Tableau dashboards that warn customers before they stock out, and recommend reorder points for fast-moving products. You will use Excel and SQL daily and visit a warehouse floor to see how picking and packing really work. Coursework in supply chain management, operations, or analytics is preferred. The internship is hybrid in Dallas, paid at $24/hour for ten weeks. International students are welcome and we support CPT and OPT authorization for this position. You will also present a reorder recommendation to one of our customer brands at the end of the summer."
+  },
+  {
+    "posting_id": "P041",
+    "title": "Operations Intern",
+    "company": "Meridian Logistics",
+    "company_stage": "enterprise",
+    "category": "Operations & Supply Chain",
+    "location": "Memphis, TN",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$22/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "process improvement",
+      "Lean",
+      "Excel",
+      "time studies"
+    ],
+    "description": "Meridian Logistics runs one of the largest parcel sorting hubs in the Mid-South, processing two hundred thousand packages per night. As an Operations Intern you will work on the hub floor with shift supervisors, conduct time studies on loading docks, and use Lean methods to remove one bottleneck before the holiday peak. You will present a before-and-after analysis of your improvement to the hub general manager. This is a hands-on role: expect to walk several miles per shift and wear safety equipment. Students in industrial engineering, operations management, or supply chain are encouraged to apply. The internship is onsite in Memphis, paid at $22/hour for twelve weeks, including some overnight shifts. Applicants must be authorized to work in the U.S. without sponsorship."
+  },
+  {
+    "posting_id": "P042",
+    "title": "Sustainability Data Intern",
+    "company": "Ironwood Manufacturing",
+    "company_stage": "enterprise",
+    "category": "Operations & Supply Chain",
+    "location": "Remote (US)",
+    "remote": "remote",
+    "paid": true,
+    "pay": "$23/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "carbon accounting",
+      "Excel",
+      "Python",
+      "ESG reporting"
+    ],
+    "description": "Ironwood Manufacturing makes steel components at five plants and has committed to cutting emissions by forty percent by 2032. Our sustainability team needs reliable numbers to track progress and report to customers. As a Sustainability Data Intern you will collect electricity, natural gas, and freight data from each plant, calculate Scope 1, 2, and 3 emissions using standard carbon accounting methods, and automate the monthly calculation with Python. You will help draft the emissions section of our annual ESG report. Coursework in environmental science, sustainability, engineering, or data analysis is welcome. The internship is fully remote, paid at $23/hour for twelve weeks. International students are welcome and we support CPT and OPT authorization. You will also learn how customers and investors use emissions data when choosing suppliers."
+  },
+  {
+    "posting_id": "P043",
+    "title": "Procurement Intern",
+    "company": "Helix Biotech",
+    "company_stage": "enterprise",
+    "category": "Operations & Supply Chain",
+    "location": "San Diego, CA",
+    "remote": "onsite",
+    "paid": true,
+    "pay": "$25/hour",
+    "visa_sponsorship": false,
+    "skills": [
+      "vendor management",
+      "SAP Ariba",
+      "negotiation",
+      "Excel"
+    ],
+    "description": "Helix Biotech develops diagnostic tests and buys thousands of lab supplies, reagents, and instruments every month. Our procurement team makes sure scientists get what they need on time while keeping costs and supplier risks under control. As a Procurement Intern you will analyze spending by category, compare quotes from competing suppliers, help negotiate a renewal for lab consumables, and clean up supplier records in SAP Ariba. You will learn how purchasing works in a regulated industry where a missing reagent can stop an experiment. Business, supply chain, or life-science students are encouraged to apply. The internship is onsite in San Diego, paid at $25/hour for ten weeks. Applicants must be authorized to work in the U.S. without sponsorship. You will also learn how supplier quality audits work in an FDA-regulated environment."
+  },
+  {
+    "posting_id": "P044",
+    "title": "Logistics Optimization Intern",
+    "company": "Lumen Freight",
+    "company_stage": "mid-size",
+    "category": "Operations & Supply Chain",
+    "location": "Remote (US)",
+    "remote": "remote",
+    "paid": true,
+    "pay": "$30/hour",
+    "visa_sponsorship": true,
+    "skills": [
+      "Python",
+      "linear programming",
+      "OR-Tools",
+      "route optimization"
+    ],
+    "description": "Lumen Freight delivers packages for online brands, and every extra mile a truck drives costs fuel, time, and emissions. As a Logistics Optimization Intern you will build route optimization models in Python with Google OR-Tools, formulate truck loading as a linear programming problem, and compare your solutions against the routes our dispatchers build by hand. You will learn where mathematical optimization meets messy real-world constraints such as driver breaks and dock hours. Coursework in operations research, optimization, or algorithms is required. The internship is fully remote, paid at $30/hour for twelve weeks. International students are welcome and we support CPT and OPT authorization for this role. You will also present the fuel savings of your best model to our operations leadership team at the end of the summer."
+  }
+]

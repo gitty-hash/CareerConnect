@@ -1,0 +1,206 @@
+{
+  "search_benchmarks": [
+    {
+      "query": "PostgreSQL",
+      "type": "exact-term",
+      "gold": [
+        "P003",
+        "P012"
+      ],
+      "why": "A rare, exact technical term. Only two postings mention it; many others mention SQL or databases in general."
+    },
+    {
+      "query": "SAP Ariba",
+      "type": "exact-term",
+      "gold": [
+        "P043"
+      ],
+      "why": "A product name. To an embedding model it looks like generic 'enterprise software'; BM25 sees one rare, decisive token."
+    },
+    {
+      "query": "OR-Tools",
+      "type": "exact-term",
+      "gold": [
+        "P044"
+      ],
+      "why": "A library name with a hyphen; only one posting contains it."
+    },
+    {
+      "query": "help a hospital understand why patients miss appointments",
+      "type": "paraphrase",
+      "gold": [
+        "P007"
+      ],
+      "why": "The target posting says 'clinics', 'booked visits', 'no-shows' - it shares no keywords with this query."
+    },
+    {
+      "query": "make websites usable for people who are blind",
+      "type": "paraphrase",
+      "gold": [
+        "P027"
+      ],
+      "why": "The target posting says 'screen readers', 'low vision', 'online portal' - no shared keywords."
+    },
+    {
+      "query": "remote data analytics internship at a startup that sponsors international students",
+      "type": "mixed",
+      "gold": [
+        "P001",
+        "P005"
+      ],
+      "why": "The brief's own example: keyword search matches 'data' and 'internship' everywhere; meaning plus filters should win."
+    },
+    {
+      "query": "Figma prototyping",
+      "type": "exact-term",
+      "gold": [
+        "P025",
+        "P028",
+        "P029"
+      ],
+      "why": "A tool name plus a skill; both methods should do reasonably well."
+    }
+  ],
+  "search_presets": [
+    "remote data analytics internship at a startup that sponsors international students",
+    "paid onsite software engineering internship in Phoenix",
+    "unpaid marketing internship for academic credit",
+    "cybersecurity role that is open to international students",
+    "help a hospital understand why patients miss appointments",
+    "PostgreSQL"
+  ],
+  "profiles": [
+    {
+      "id": "PR1",
+      "label": "International MS Business Analytics student",
+      "text": "Master's student in Business Analytics graduating May 2027, on an F-1 visa so I need an employer that supports CPT/OPT. Skills: SQL (window functions, joins), Python with pandas, Tableau dashboards, Excel. Built a Tableau dashboard for my campus dining services job that cut weekly reporting time in half. Interested in data analyst roles, ideally remote, and I need a paid internship."
+    },
+    {
+      "id": "PR2",
+      "label": "CS junior, full-stack",
+      "text": "Computer Science junior. I have built two web apps with React and TypeScript, a REST API with Java Spring Boot for a class project, and I use Git daily. Won second place at a campus hackathon building an offline-first note app. Looking for a paid software engineering internship, open to relocating, US citizen."
+    },
+    {
+      "id": "PR3",
+      "label": "Marketing senior, content creator",
+      "text": "Marketing senior who runs the social media accounts for a student club: grew Instagram from 300 to 1,150 followers in one semester with a weekly student-spotlight series. Comfortable with Canva, TikTok video editing, copywriting, and basic Google Analytics. Want a social media or content marketing internship; I can only take a paid role."
+    },
+    {
+      "id": "PR4",
+      "label": "Mismatched: culinary arts student (honesty test)",
+      "text": "Culinary arts student with four years of experience as a line cook and pastry assistant at a bakery. I am looking for a pastry chef apprenticeship in a restaurant kitchen. I do not use computers much for work and I am not interested in office jobs."
+    }
+  ],
+  "coach_eval": [
+    {
+      "q": "How long should my resume be if I'm an undergrad applying for internships?",
+      "gold": [
+        "G01"
+      ]
+    },
+    {
+      "q": "I'm a PhD student applying for a machine learning research internship. Can my resume be two pages?",
+      "gold": [
+        "G02"
+      ]
+    },
+    {
+      "q": "How should I structure my answer when an interviewer asks me to describe a time I failed?",
+      "gold": [
+        "G03"
+      ]
+    },
+    {
+      "q": "What SQL topics should I review before a data analyst interview?",
+      "gold": [
+        "G04"
+      ]
+    },
+    {
+      "q": "How do I reach out to an alum for a coffee chat without it being awkward?",
+      "gold": [
+        "G05"
+      ]
+    },
+    {
+      "q": "Is it okay to accept an unpaid internship that only gives academic credit?",
+      "gold": [
+        "G06"
+      ]
+    },
+    {
+      "q": "Can I negotiate pay for an internship at a big company?",
+      "gold": [
+        "G07"
+      ]
+    },
+    {
+      "q": "I'm on an F-1 visa. What's the difference between CPT and OPT for a summer internship?",
+      "gold": [
+        "G10"
+      ]
+    },
+    {
+      "q": "Should I bring printed copies of my resume to the career fair?",
+      "gold": [
+        "G11"
+      ]
+    },
+    {
+      "q": "What should I focus on during my first week at my internship?",
+      "gold": [
+        "G08"
+      ]
+    },
+    {
+      "q": "My friend says a resume must always be one page, but I'm finishing a master's with two publications. Who's right?",
+      "gold": [
+        "G01",
+        "G02"
+      ]
+    },
+    {
+      "q": "Is the fall recruiting expo on Zoom this year, and do I need paper copies of anything?",
+      "gold": [
+        "G11"
+      ]
+    },
+    {
+      "q": "A startup offered me $28 an hour and a bigger company offered $32. How should I weigh them, and can I use one offer to negotiate the other?",
+      "gold": [
+        "G06",
+        "G07"
+      ]
+    },
+    {
+      "q": "What does E-Verify have to do with staying longer after graduation?",
+      "gold": [
+        "G10"
+      ]
+    },
+    {
+      "q": "Halfway through my summer job my manager gave me feedback. How do I make sure they ask me back full-time?",
+      "gold": [
+        "G13"
+      ]
+    }
+  ],
+  "coach_out_of_scope": [
+    "How do I file my taxes as an international student?",
+    "What laptop should I buy for a computer science major?",
+    "Can you recommend a cheap apartment near campus?",
+    "Who won the basketball game last night?"
+  ],
+  "employer_drafts": [
+    {
+      "id": "ED1",
+      "label": "Draft A - over-restricted data internship",
+      "text": "Data Analyst Intern - Copper Canyon Retail (Tempe, AZ)\nWe are looking for a rockstar data ninja to join our fast-paced team. You will build Tableau dashboards and write SQL to analyze store sales, and present insights to leadership. Requirements: must be a U.S. citizen; 3+ years of professional experience with SQL and Tableau; digital native who grew up with social media; recent graduates only (Class of 2025). This role is onsite 5 days a week in Tempe and is unpaid, full-time (40 hours/week) for the summer."
+    },
+    {
+      "id": "ED2",
+      "label": "Draft B - well-scoped analytics internship (control)",
+      "text": "Data Analyst Intern - Copper Canyon Retail (Remote or hybrid in Tempe, AZ)\nJoin our analytics team for a paid summer internship ($25/hour, 12 weeks). You will write SQL to analyze store sales, build Tableau dashboards for store managers, and present one recommendation to leadership. Class projects count as experience. Preferred skills: SQL, Excel, Tableau or any visualization tool. International students are welcome; we support CPT and OPT work authorization."
+    }
+  ]
+}
